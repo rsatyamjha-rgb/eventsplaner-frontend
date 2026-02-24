@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EventsPlaner.com – India's Best Wedding & Event Planners</title>
+  <meta name="description" content="Find India's best verified event planners for weddings, birthdays & corporate events. Compare ratings, read reviews and book top professionals in your city.">
+  <meta name="keywords" content="Event Planner India, Wedding Planner, Birthday Organizer, Corporate Event Management, Verified Event Professionals">
+  <link rel="canonical" href="https://eventsplaner.com/"/>
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="EventsPlaner.com – India's Best Wedding & Event Planners"/>
+  <meta property="og:description" content="Find top-rated, verified event planners in your city. Weddings, birthdays & corporate events — all in one place."/>
+  <meta property="og:image" content="https://eventsplaner.com/og-image.jpg"/>
+  <meta property="og:image:alt" content="EventsPlaner.com – India's Premier Event Planning Platform"/>
+  <meta property="og:url" content="https://eventsplaner.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="EventsPlaner.com"/>
+  <meta property="og:locale" content="en_IN"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="EventsPlaner.com – India's Best Event Planners"/>
+  <meta name="twitter:description" content="Find top-rated, verified event planners in your city."/>
+  <meta name="twitter:image" content="https://eventsplaner.com/og-image.jpg"/>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://eventsplaner.com/#website",
+        "url": "https://eventsplaner.com",
+        "name": "EventsPlaner.com",
+        "description": "India's premier platform to find verified event planners",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://eventsplaner.com/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://eventsplaner.com/#organization",
+        "name": "EventsPlaner.com",
+        "url": "https://eventsplaner.com",
+        "logo": "https://eventsplaner.com/logo.png",
+        "description": "India's leading marketplace for verified event planners",
+        "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@eventsplaner.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I find an event planner on EventsPlaner.com?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Simply select your city from the search bar, enter the type of event you want to plan, and browse our verified planners. You can compare ratings, read reviews, and contact planners directly." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are all planners on EventsPlaner.com verified?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every planner on our platform goes through a verification process before their profile is published. Professional and Premium plan subscribers also receive a Verified badge on their profile." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost to list my event planning business?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We offer three plans: Basic at ₹499/month, Professional at ₹999/month, and Premium at ₹1,999/month. Each plan offers different levels of visibility and features." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use EventsPlaner.com for free as a customer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Browsing planners, reading reviews, and contacting planners is completely free for customers. Only event planners pay a subscription to list their services." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{--gold:#C9A84C;--gold-light:#E8C96D;--charcoal:#1C1C1E;--charcoal2:#242426;--charcoal3:#2E2E30;--charcoal4:#3A3A3C;--white:#F5F0E8;--gray:#8A8A8E;--lgray:#C7C7CC;}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--charcoal);color:var(--white);font-family:'Jost',sans-serif;overflow-x:hidden}
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--charcoal)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+    /* ── DESKTOP NAV ── */
+    nav{position:fixed;top:0;width:100%;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:20px 7%;background:rgba(28,28,30,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.2);transition:.3s}
+    nav.scrolled{padding:14px 7%;box-shadow:0 4px 30px rgba(0,0,0,.4)}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:1px}
+    .logo span{color:var(--white)}
+    .nav-links{display:flex;gap:36px;list-style:none}
+    .nav-links a{color:var(--lgray);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.8px;text-transform:uppercase;transition:.2s}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-btns{display:flex;gap:12px}
+    .btn{padding:10px 24px;border-radius:3px;font-weight:600;font-size:.8rem;cursor:pointer;border:none;transition:.25s;font-family:'Jost',sans-serif;letter-spacing:.8px;text-transform:uppercase}
+    .btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+    .btn-outline:hover{background:var(--gold);color:var(--charcoal)}
+    .btn-gold{background:var(--gold);color:var(--charcoal);font-weight:700}
+    .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 24px rgba(201,168,76,.3)}
+
+    /* ── MOBILE STICKY BOTTOM NAV ── */
+    .mobile-nav{
+      display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;
+      background:rgba(28,28,30,.98);backdrop-filter:blur(20px);
+      border-top:1px solid rgba(201,168,76,.2);
+      padding:10px 0 calc(10px + env(safe-area-inset-bottom));
+    }
+    .mobile-nav-inner{display:flex;justify-content:space-around;align-items:center}
+    .mob-nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--gray);text-decoration:none;font-size:.62rem;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;padding:4px 12px;transition:.2s;background:none;border:none;font-family:'Jost',sans-serif}
+    .mob-nav-item .mob-icon{font-size:1.3rem;line-height:1}
+    .mob-nav-item.active,.mob-nav-item:hover{color:var(--gold)}
+    .mob-nav-cta{background:var(--gold);color:var(--charcoal);border-radius:3px;padding:8px 16px;font-weight:700}
+    .mob-nav-cta:hover{background:var(--gold-light);color:var(--charcoal)}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 6% 100px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(201,168,76,.1) 0%,transparent 70%);pointer-events:none}
+    .hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(201,168,76,.02) 80px,rgba(201,168,76,.02) 81px);pointer-events:none}
+    .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px;animation:fadeUp .8s ease both}
+    .eyebrow-line{width:40px;height:1px;background:var(--gold)}
+    .eyebrow span{font-size:.75rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:500}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,6rem);line-height:1.1;font-weight:700;animation:fadeUp .9s .1s ease both}
+    .hero h1 em{font-style:italic;color:var(--gold);display:block}
+    .hero-sub{font-size:.98rem;color:var(--gray);max-width:480px;line-height:1.8;margin:24px auto 44px;font-weight:300;animation:fadeUp .9s .2s ease both}
+    .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp .9s .3s ease both}
+    .hero-btns .btn{padding:14px 36px;font-size:.85rem}
+    .scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--gray);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;animation:fadeUp 1s .5s ease both}
+    .scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s ease-in-out infinite}
+
+    /* ── SEARCH ── */
+    .search-section{padding:0 6% 70px}
+    .search-wrap{max-width:720px;margin:0 auto;background:var(--charcoal2);border:1px solid rgba(201,168,76,.3);border-radius:4px;overflow:hidden;display:flex;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+    .search-wrap select,.search-wrap input{background:transparent;border:none;outline:none;color:var(--white);font-family:'Jost',sans-serif;font-size:.9rem;padding:16px 18px}
+    .search-wrap select{border-right:1px solid rgba(201,168,76,.15);color:var(--lgray);min-width:170px;cursor:pointer}
+    .search-wrap select option{background:var(--charcoal2)}
+    .search-wrap input{flex:1}
+    .search-wrap input::placeholder{color:var(--gray)}
+    .search-wrap button{background:var(--gold);border:none;padding:0 28px;color:var(--charcoal);font-weight:700;cursor:pointer;font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;transition:.2s;white-space:nowrap}
+    .search-wrap button:hover{background:var(--gold-light)}
+
+    /* ── STATS ── */
+    .stats-bar{display:flex;justify-content:center;border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12)}
+    .stat-item{text-align:center;padding:44px 60px;border-right:1px solid rgba(201,168,76,.12);flex:1;min-width:140px}
+    .stat-item:last-child{border-right:none}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;line-height:1}
+    .stat-label{font-size:.72rem;color:var(--gray);margin-top:6px;letter-spacing:1.5px;text-transform:uppercase}
+
+    /* ── SECTION ── */
+    section{padding:100px 7%}
+    .sec-label{font-size:.7rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:block}
+    .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);margin-bottom:14px;font-weight:700}
+    .sec-sub{color:var(--gray);font-size:.9rem;margin-bottom:56px;font-weight:300}
+
+    /* ── PLANNER CARDS ── */
+    .planners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+    .planner-card{background:var(--charcoal2);border:1px solid rgba(255,255,255,.05);border-radius:4px;overflow:hidden;transition:.35s;cursor:pointer}
+    .planner-card:hover{border-color:rgba(201,168,76,.5);transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.5)}
+    .card-top{height:160px;position:relative;background:linear-gradient(135deg,var(--charcoal3),var(--charcoal4));display:flex;align-items:center;justify-content:center}
+    .card-avatar{width:72px;height:72px;border-radius:50%;background:var(--charcoal);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold);font-weight:700}
+    /* Plan badge top-right */
+    .card-plan-badge{position:absolute;top:14px;right:14px;font-size:.62rem;font-weight:700;padding:4px 10px;border-radius:2px;text-transform:uppercase;letter-spacing:.8px}
+    .badge-prem{background:var(--gold);color:var(--charcoal)}
+    .badge-pro{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+    /* Verified badge bottom-left */
+    .verified-badge{position:absolute;bottom:12px;left:12px;background:rgba(28,28,30,.9);border:1px solid #4CAF82;color:#4CAF82;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:2px;letter-spacing:.8px;text-transform:uppercase;display:flex;align-items:center;gap:4px}
+    .verified-badge::before{content:'✓';font-weight:900}
+    .card-body{padding:20px}
+    .card-biz{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;margin-bottom:4px}
+    .card-city{font-size:.78rem;color:var(--gold);margin-bottom:12px;letter-spacing:.5px}
+    .card-city::before{content:'◈  '}
+    .card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+    .tag{background:var(--charcoal3);font-size:.7rem;padding:4px 10px;border-radius:2px;color:var(--lgray)}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
+    .card-rating{color:var(--gold);font-size:.85rem;font-weight:600}
+    .card-reviews{color:var(--gray);font-size:.75rem;margin-left:5px}
+    .card-cta{background:transparent;border:1px solid rgba(201,168,76,.4);color:var(--gold);padding:7px 16px;border-radius:2px;font-size:.7rem;cursor:pointer;transition:.2s;font-family:'Jost',sans-serif;letter-spacing:.8px;text-transform:uppercase}
+    .card-cta:hover{background:var(--gold);color:var(--charcoal)}
+
+    /* ── HOW IT WORKS ── */
+    .how-section{background:var(--charcoal2)}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px}
+    .step{padding:48px 32px;background:var(--charcoal2);border:1px solid rgba(201,168,76,.08);transition:.3s;text-align:center}
+    .step:hover{background:var(--charcoal3);border-color:rgba(201,168,76,.3)}
+    .step-num{font-family:'Cormorant Garamond',serif;font-size:4rem;color:rgba(201,168,76,.1);font-weight:700;line-height:1;margin-bottom:16px}
+    .step-icon{font-size:2rem;margin-bottom:14px}
+    .step h3{font-size:.88rem;font-weight:600;margin-bottom:10px;letter-spacing:.8px;text-transform:uppercase}
+    .step p{font-size:.85rem;color:var(--gray);line-height:1.7;font-weight:300}
+
+    /* ── PRICING ── */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1px;max-width:960px;margin:0 auto;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.1)}
+    .price-card{background:var(--charcoal2);padding:48px 36px;text-align:center;position:relative;transition:.3s}
+    .price-card:hover,.price-card.featured{background:var(--charcoal3)}
+    .feat-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--charcoal);font-size:.65rem;font-weight:700;padding:5px 20px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+    .price-plan{font-size:.72rem;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;margin-top:16px}
+    .price-amt{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700}
+    .price-amt span{font-size:.9rem;color:var(--gray);font-family:'Jost',sans-serif}
+    .price-divider{width:40px;height:1px;background:var(--gold);margin:22px auto}
+    .price-card ul{list-style:none;text-align:left;margin-bottom:30px}
+    .price-card ul li{font-size:.84rem;color:var(--lgray);padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);font-weight:300;display:flex;align-items:center;gap:10px}
+    .price-card ul li::before{content:'—';color:var(--gold);font-weight:700}
+    .price-card .btn{width:100%;padding:14px;font-size:.8rem}
+
+    /* ── FAQ ── */
+    .faq-section{background:var(--charcoal)}
+    .faq-list{max-width:800px;margin:0 auto}
+    .faq-item{border-bottom:1px solid rgba(201,168,76,.12);overflow:hidden}
+    .faq-question{width:100%;background:none;border:none;color:var(--white);font-family:'Jost',sans-serif;font-size:.95rem;font-weight:500;padding:22px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;transition:.2s;letter-spacing:.3px}
+    .faq-question:hover{color:var(--gold)}
+    .faq-icon{font-size:1.2rem;color:var(--gold);transition:.3s;flex-shrink:0;font-weight:300}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:.4s ease}
+    .faq-answer p{color:var(--gray);font-size:.88rem;line-height:1.8;padding-bottom:22px;font-weight:300}
+    .faq-item.open .faq-answer{max-height:300px}
+
+    /* ── MODAL ── */
+    .modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);align-items:center;justify-content:center}
+    .modal-overlay.active{display:flex}
+    .modal{background:var(--charcoal2);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:48px;width:90%;max-width:480px;position:relative;max-height:90vh;overflow-y:auto}
+    .modal-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--gray);font-size:1.4rem;cursor:pointer;transition:.2s}
+    .modal-close:hover{color:var(--white)}
+    .modal-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:4px;font-weight:700}
+    .modal-sub{color:var(--gray);font-size:.85rem;margin-bottom:32px;font-weight:300}
+    .tab-btns{display:flex;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:32px}
+    .tab-btn{flex:1;background:none;border:none;color:var(--gray);padding:12px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:500;transition:.2s;letter-spacing:.8px;text-transform:uppercase}
+    .tab-btn.active{color:var(--gold);border-bottom:1px solid var(--gold)}
+    .tab-content{display:none}.tab-content.active{display:block}
+    .form-group{margin-bottom:18px}
+    .form-group label{display:block;font-size:.72rem;color:var(--gray);margin-bottom:7px;letter-spacing:.8px;text-transform:uppercase}
+    .form-group input,.form-group select{width:100%;padding:13px 15px;background:var(--charcoal3);border:1px solid rgba(255,255,255,.08);border-radius:3px;color:var(--white);font-family:'Jost',sans-serif;font-size:.9rem;outline:none;transition:.2s}
+    .form-group input:focus,.form-group select:focus{border-color:var(--gold)}
+    .form-group select option{background:var(--charcoal3)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-submit{width:100%;padding:14px;font-size:.85rem;margin-top:8px}
+
+    /* ── TOAST ── */
+    .toast{position:fixed;bottom:90px;right:32px;z-index:99999;background:var(--charcoal3);border:1px solid var(--gold);color:var(--white);padding:14px 24px;border-radius:3px;font-size:.88rem;transform:translateY(80px);opacity:0;transition:.4s;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+    .toast.show{transform:translateY(0);opacity:1}
+
+    /* ── FOOTER ── */
+    footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:60px 7% 32px}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px;flex-wrap:wrap;gap:32px}
+    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold);font-weight:700}
+    .footer-brand p{color:var(--gray);font-size:.85rem;margin-top:10px;max-width:260px;line-height:1.7;font-weight:300}
+    .footer-links-group{display:flex;gap:60px;flex-wrap:wrap}
+    .footer-col h4{font-size:.7rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+    .footer-col a{display:block;color:var(--gray);text-decoration:none;font-size:.85rem;margin-bottom:10px;transition:.2s;font-weight:300}
+    .footer-col a:hover{color:var(--white)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-bottom p{color:var(--gray);font-size:.78rem}
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .nav-btns{display:none}
+      .mobile-nav{display:block}
+      body{padding-bottom:70px}
+      .stat-item{padding:28px 20px}
+      .form-row{grid-template-columns:1fr}
+      .search-wrap{flex-direction:column}
+      .search-wrap select{border-right:none;border-bottom:1px solid rgba(201,168,76,.15);min-width:100%}
+      .footer-top{flex-direction:column}
+      .footer-links-group{gap:32px}
+      .toast{bottom:90px;right:16px;left:16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- DESKTOP NAV -->
+<nav id="mainNav">
+  <a href="/" class="logo" aria-label="EventsPlaner.com Home">Events<span>Planer</span>.com</a>
+  <ul class="nav-links" role="navigation" aria-label="Main Navigation">
+    <li><a href="#planners">Find Planners</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-btns">
+    <button class="btn btn-outline" onclick="openModal('login')" aria-label="Login to your account">Login</button>
+    <button class="btn btn-gold" onclick="openModal('planner-register')" aria-label="Register as an event planner">Join as Planner</button>
+  </div>
+</nav>
+
+<!-- MOBILE STICKY BOTTOM NAV -->
+<nav class="mobile-nav" aria-label="Mobile Navigation">
+  <div class="mobile-nav-inner">
+    <a href="#planners" class="mob-nav-item active" aria-label="Find Planners">
+      <span class="mob-icon">🔍</span>
+      <span>Find</span>
+    </a>
+    <a href="#how" class="mob-nav-item" aria-label="How It Works">
+      <span class="mob-icon">⭐</span>
+      <span>How</span>
+    </a>
+    <button class="mob-nav-item mob-nav-cta" onclick="openModal('planner-register')" aria-label="Join as Planner">
+      <span class="mob-icon">＋</span>
+      <span>Join</span>
+    </button>
+    <a href="#pricing" class="mob-nav-item" aria-label="Pricing Plans">
+      <span class="mob-icon">💎</span>
+      <span>Pricing</span>
+    </a>
+    <a href="#faq" class="mob-nav-item" aria-label="FAQ">
+      <span class="mob-icon">❓</span>
+      <span>FAQ</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero Section">
+  <div class="eyebrow" role="text">
+    <div class="eyebrow-line" aria-hidden="true"></div>
+    <span>India's Premier Event Planning Platform</span>
+    <div class="eyebrow-line" aria-hidden="true"></div>
+  </div>
+  <h1>Find Your City's<em>Best Event Planner</em></h1>
+  <p class="hero-sub">Weddings, Birthdays, Corporate Events — Connect with India's top-rated, verified event professionals.</p>
+  <div class="hero-btns">
+    <button class="btn btn-gold" onclick="document.getElementById('planners').scrollIntoView({behavior:'smooth'})" aria-label="Browse event planners">Explore Planners</button>
+    <button class="btn btn-outline" onclick="openModal('planner-register')" aria-label="List your event planning business">List Your Business</button>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-section" role="search" aria-label="Search Event Planners">
+  <div class="search-wrap">
+    <select id="cityFilter" onchange="filterPlanners()" aria-label="Filter by city">
+      <option value="">All Cities</option>
+      <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
+      <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
+      <option>Jaipur</option><option>Kolkata</option><option>Ahmedabad</option><option>Lucknow</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Search by event type or planner name..." oninput="filterPlanners()" aria-label="Search planners"/>
+    <button onclick="filterPlanners()" aria-label="Submit search">Search</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar" aria-label="Platform Statistics">
+  <div class="stat-item"><div class="stat-num" id="statPlanners">0</div><div class="stat-label">Verified Planners</div></div>
+  <div class="stat-item"><div class="stat-num" id="statCities">0</div><div class="stat-label">Cities Covered</div></div>
+  <div class="stat-item"><div class="stat-num" id="statEvents">0</div><div class="stat-label">Events Delivered</div></div>
+  <div class="stat-item"><div class="stat-num" id="statRating">0</div><div class="stat-label">Average Rating</div></div>
+</div>
+
+<!-- PLANNERS -->
+<section id="planners" aria-label="Top Event Planners">
+  <span class="sec-label">Discover</span>
+  <h2 class="sec-title">Top Event <span style="color:var(--gold)">Planners</span></h2>
+  <p class="sec-sub">Verified professionals — Read reviews, compare portfolios & book with confidence</p>
+  <div class="planners-grid" id="plannersGrid" role="list" aria-label="Event Planners List"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how" aria-label="How It Works">
+  <div style="text-align:center;margin-bottom:64px">
+    <span class="sec-label">Process</span>
+    <h2 class="sec-title">How It <span style="color:var(--gold)">Works</span></h2>
+    <p class="sec-sub">Three simple steps to your perfect event planner</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num" aria-hidden="true">01</div>
+      <div class="step-icon" role="img" aria-label="City icon">🏙️</div>
+      <h3>Choose Your City</h3>
+      <p>Select your city and browse top-rated planners available in your area.</p>
+    </div>
+    <div class="step">
+      <div class="step-num" aria-hidden="true">02</div>
+      <div class="step-icon" role="img" aria-label="Star rating icon">⭐</div>
+      <h3>Compare & Evaluate</h3>
+      <p>Review ratings, portfolios and client reviews to find your ideal match.</p>
+    </div>
+    <div class="step">
+      <div class="step-num" aria-hidden="true">03</div>
+      <div class="step-icon" role="img" aria-label="Celebration icon">🎊</div>
+      <h3>Book & Celebrate</h3>
+      <p>Contact your chosen planner directly and start planning your dream event.</p>
+    </div>
+    <div class="step">
+      <div class="step-num" aria-hidden="true">04</div>
+      <div class="step-icon" role="img" aria-label="Review icon">💬</div>
+      <h3>Leave a Review</h3>
+      <p>Share your experience to help others find great planners in their city.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" aria-label="Subscription Plans">
+  <div style="text-align:center;margin-bottom:64px">
+    <span class="sec-label">For Planners</span>
+    <h2 class="sec-title">Subscription <span style="color:var(--gold)">Plans</span></h2>
+    <p class="sec-sub">Join India's fastest growing event planning marketplace</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-plan">Basic</div>
+      <div class="price-amt">₹499 <span>/ month</span></div>
+      <div class="price-divider"></div>
+      <ul><li>Profile listing</li><li>1 City listing</li><li>Up to 5 photos</li><li>Customer inquiries</li><li>Basic support</li></ul>
+      <button class="btn btn-outline" onclick="openModal('planner-register')" aria-label="Get started with Basic plan">Get Started</button>
+    </div>
+    <div class="price-card featured">
+      <div class="feat-badge">Most Popular</div>
+      <div class="price-plan">Professional</div>
+      <div class="price-amt">₹999 <span>/ month</span></div>
+      <div class="price-divider"></div>
+      <ul><li>Featured listing (Top placement)</li><li>3 Cities listing</li><li>Unlimited photos & videos</li><li>Verified badge ✓</li><li>Priority support</li><li>Analytics dashboard</li></ul>
+      <button class="btn btn-gold" onclick="openModal('planner-register')" aria-label="Subscribe to Professional plan">Subscribe Now</button>
+    </div>
+    <div class="price-card">
+      <div class="price-plan">Premium</div>
+      <div class="price-amt">₹1,999 <span>/ month</span></div>
+      <div class="price-divider"></div>
+      <ul><li>Top Featured placement</li><li>All India listing</li><li>Dedicated profile page</li><li>Gold Verified badge ✓✓</li><li>24/7 Priority support</li><li>Leads & Analytics</li><li>Social media promotion</li></ul>
+      <button class="btn btn-outline" onclick="openModal('planner-register')" aria-label="Get started with Premium plan">Go Premium</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq" aria-label="Frequently Asked Questions">
+  <div style="text-align:center;margin-bottom:64px">
+    <span class="sec-label">Support</span>
+    <h2 class="sec-title">Frequently Asked <span style="color:var(--gold)">Questions</span></h2>
+    <p class="sec-sub">Everything you need to know about EventsPlaner.com</p>
+  </div>
+  <div class="faq-list" role="list">
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        How do I find an event planner in my city?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" aria-hidden="true">
+        <p>Simply use the search bar at the top of the page. Select your city from the dropdown, type your event type (wedding, birthday, corporate), and browse our curated list of verified planners in your area. You can compare ratings, read client reviews, and contact planners directly — all for free.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        Are all planners on EventsPlaner.com verified?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" aria-hidden="true">
+        <p>Yes. Every planner on our platform goes through a strict verification process before their profile goes live. Professional and Premium subscribers receive a green Verified badge on their profile, giving you extra confidence when choosing your planner.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        Is EventsPlaner.com free for customers?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" aria-hidden="true">
+        <p>Absolutely. Browsing planners, reading reviews, comparing portfolios, and contacting planners is completely free for customers. You will never be charged for using our platform as a customer. Only event planners pay a monthly subscription to list their services.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        How much does it cost to list my planning business?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" aria-hidden="true">
+        <p>We offer three flexible plans: Basic at ₹499/month for a single city listing, Professional at ₹999/month for 3 cities with a Verified badge and analytics, and Premium at ₹1,999/month for all-India listing, Gold Verified badge, leads, and social media promotion. All plans are billed monthly with no long-term contracts.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        How do Premium planners appear higher in search results?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" aria-hidden="true">
+        <p>Premium and Professional subscribers are featured at the top of all search results and city listings. This gives them maximum visibility to customers actively looking for planners. Their profiles also display special badges that build trust with potential clients.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        Can I cancel my planner subscription anytime?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" aria-hidden="true">
+        <p>Yes. There are no long-term contracts or cancellation fees. You can cancel your subscription at any time from your dashboard. Your profile will remain active until the end of the current billing period.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">EventsPlaner.com</div>
+      <p>India's leading platform connecting event seekers with verified professional planners.</p>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#planners">Find Planners</a>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 EventsPlaner.com — India's Premier Event Planning Platform</p>
+    <p>Made with ♦ in India</p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalBg(event)" role="dialog" aria-modal="true" aria-label="Registration Modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+    <div id="userModal" style="display:none">
+      <div class="tab-btns" role="tablist">
+        <button class="tab-btn active" onclick="switchTab(this,'loginTab')" role="tab" aria-selected="true">Login</button>
+        <button class="tab-btn" onclick="switchTab(this,'signupTab')" role="tab" aria-selected="false">Sign Up</button>
+      </div>
+      <div class="tab-content active" id="loginTab" role="tabpanel">
+        <div class="modal-title">Welcome Back</div>
+        <p class="modal-sub">Login to your account</p>
+        <div class="form-group"><label for="loginEmail">Email</label><input id="loginEmail" type="email" placeholder="your@email.com" autocomplete="email"/></div>
+        <div class="form-group"><label for="loginPass">Password</label><input id="loginPass" type="password" placeholder="••••••••" autocomplete="current-password"/></div>
+        <button class="btn btn-gold form-submit" onclick="handleLogin()">Login</button>
+      </div>
+      <div class="tab-content" id="signupTab" role="tabpanel">
+        <div class="modal-title">Create Account</div>
+        <p class="modal-sub">Sign up free and discover top planners</p>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Rahul" autocomplete="given-name"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Sharma" autocomplete="family-name"/></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"/></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 98765 43210" autocomplete="tel"/></div>
+        <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••" autocomplete="new-password"/></div>
+        <button class="btn btn-gold form-submit" onclick="handleSignup()">Create Account</button>
+      </div>
+    </div>
+    <div id="plannerModal" style="display:none">
+      <div class="modal-title">Join as a Planner</div>
+      <p class="modal-sub">Reach thousands of clients across India</p>
+      <div class="form-row">
+        <div class="form-group"><label>Your Name</label><input type="text" id="pName" placeholder="Full Name" autocomplete="name"/></div>
+        <div class="form-group"><label>Business Name</label><input type="text" id="pBusiness" placeholder="Company Name"/></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" id="pEmail" placeholder="business@email.com" autocomplete="email"/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="pPhone" placeholder="+91 98765 43210" autocomplete="tel"/></div>
+      <div class="form-row">
+        <div class="form-group"><label>City</label>
+          <select id="pCity" aria-label="Select your city">
+            <option value="">Select City</option>
+            <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
+            <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
+            <option>Jaipur</option><option>Kolkata</option><option>Ahmedabad</option><option>Lucknow</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Plan</label>
+          <select id="pPlan" aria-label="Select subscription plan">
+            <option value="basic">Basic — ₹499/month</option>
+            <option value="professional" selected>Professional — ₹999/month</option>
+            <option value="premium">Premium — ₹1,999/month</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Event Types</label><input type="text" id="pEvents" placeholder="Wedding, Birthday, Corporate..."/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="pPassword" placeholder="••••••••" autocomplete="new-password"/></div>
+      <button class="btn btn-gold form-submit" onclick="handlePlannerRegister()">Register & Continue to Payment</button>
+      <p style="text-align:center;color:var(--gray);font-size:.75rem;margin-top:14px">🔒 Secure payment via Razorpay</p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script>
+const API='https://eventsplaner-backend.onrender.com/api';
+
+const demo=[
+  {id:1,name:'Rahul Sharma',business:'RS Events Delhi',city:'Delhi',rating:4.8,reviews:124,tags:['Wedding','Birthday','Corporate'],plan:'premium',avatar:'R',verified:true},
+  {id:2,name:'Priya Patel',business:'Dream Weddings Mumbai',city:'Mumbai',rating:4.9,reviews:98,tags:['Wedding','Reception','Mehendi'],plan:'premium',avatar:'P',verified:true},
+  {id:3,name:'Suresh Kumar',business:'SK Celebrations Bangalore',city:'Bangalore',rating:4.6,reviews:67,tags:['Corporate','Birthday','Launch'],plan:'professional',avatar:'S',verified:true},
+  {id:4,name:'Neha Gupta',business:'Neha Events Jaipur',city:'Jaipur',rating:4.7,reviews:89,tags:['Wedding','Engagement','Haldi'],plan:'premium',avatar:'N',verified:true},
+  {id:5,name:'Vikram Singh',business:'Royal Corporate Events',city:'Delhi',rating:4.5,reviews:45,tags:['Corporate','Conference','Awards'],plan:'professional',avatar:'V',verified:true},
+  {id:6,name:'Anita Mehta',business:'Celebration Hub Pune',city:'Pune',rating:4.9,reviews:156,tags:['Wedding','Birthday','Shower'],plan:'premium',avatar:'A',verified:true},
+  {id:7,name:'Rohit Joshi',business:'Joshi Functions Mumbai',city:'Mumbai',rating:4.4,reviews:33,tags:['Birthday','Anniversary'],plan:'professional',avatar:'R',verified:true},
+  {id:8,name:'Deepika Rao',business:'Elite Events Hyderabad',city:'Hyderabad',rating:4.8,reviews:112,tags:['Corporate','Launch','Wedding'],plan:'premium',avatar:'D',verified:true},
+];
+
+function renderPlanners(data){
+  document.getElementById('plannersGrid').innerHTML=data.map(p=>`
+    <article class="planner-card" role="listitem" aria-label="${p.business} - Event Planner in ${p.city}">
+      <div class="card-top">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Ccircle cx='36' cy='36' r='36' fill='%232E2E30'/%3E%3Ctext x='36' y='48' text-anchor='middle' font-size='28' font-family='serif' fill='%23C9A84C'%3E${p.avatar}%3C/text%3E%3C/svg%3E"
+          alt="Profile photo of ${p.name}, ${p.business} event planner in ${p.city}"
+          class="card-avatar"
+          width="72" height="72"
+          loading="lazy"
+        />
+        ${p.plan==='premium'?'<span class="card-plan-badge badge-prem" aria-label="Premium Plan">Premium</span>':p.plan==='professional'?'<span class="card-plan-badge badge-pro" aria-label="Professional Plan">Pro</span>':''}
+        ${p.verified?'<span class="verified-badge" aria-label="Verified Planner">Verified</span>':''}
+      </div>
+      <div class="card-body">
+        <h3 class="card-biz">${p.business}</h3>
+        <div class="card-city" aria-label="Location: ${p.city}">${p.city}</div>
+        <div class="card-tags" aria-label="Event types">
+          ${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}
+        </div>
+        <div class="card-footer">
+          <div aria-label="Rating: ${p.rating} out of 5 based on ${p.reviews} reviews">
+            <span class="card-rating" aria-hidden="true">★ ${p.rating}</span>
+            <span class="card-reviews">(${p.reviews} reviews)</span>
+          </div>
+          <button class="card-cta" onclick="showToast('Enquiry sent to ${p.business}!')" aria-label="Contact ${p.business}">Contact</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
+function filterPlanners(){
+  const city=document.getElementById('cityFilter').value;
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  const ord={premium:0,professional:1,basic:2};
+  let list=demo.filter(p=>(!city||p.city===city)&&(!q||p.business.toLowerCase().includes(q)||p.tags.some(t=>t.toLowerCase().includes(q))));
+  list.sort((a,b)=>ord[a.plan]-ord[b.plan]||b.rating-a.rating);
+  renderPlanners(list);
+}
+
+// Stats counter
+new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    const ac=(el,end,sf='')=>{let n=0;const s=end/60;const t=setInterval(()=>{n=Math.min(n+s,end);el.textContent=(end<10?n.toFixed(1):Math.floor(n))+sf;if(n>=end)clearInterval(t);},20);};
+    ac(document.getElementById('statPlanners'),1240,'+');
+    ac(document.getElementById('statCities'),28,'+');
+    ac(document.getElementById('statEvents'),8500,'+');
+    ac(document.getElementById('statRating'),4.8);
+  }
+},{threshold:.2}).observe(document.querySelector('.stats-bar'));
+
+// Nav scroll effect
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);
+  // Update mobile nav active state
+  const sections=['planners','how','pricing','faq'];
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el) return;
+    const rect=el.getBoundingClientRect();
+    const link=document.querySelector(`.mobile-nav a[href="#${id}"]`);
+    if(link){
+      if(rect.top<=150&&rect.bottom>=150) link.classList.add('active');
+      else link.classList.remove('active');
+    }
+  });
+});
+
+// FAQ toggle
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.faq-question').setAttribute('aria-expanded','false');
+    i.querySelector('.faq-answer').setAttribute('aria-hidden','true');
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    item.querySelector('.faq-answer').setAttribute('aria-hidden','false');
+  }
+}
+
+// Modal
+function openModal(type){
+  document.getElementById('modalOverlay').classList.add('active');
+  document.getElementById('userModal').style.display='none';
+  document.getElementById('plannerModal').style.display='none';
+  if(type==='planner-register') document.getElementById('plannerModal').style.display='block';
+  else document.getElementById('userModal').style.display='block';
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('active');}
+function closeModalBg(e){if(e.target.id==='modalOverlay')closeModal();}
+function switchTab(btn,tabId){
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');btn.setAttribute('aria-selected','true');
+  document.getElementById(tabId).classList.add('active');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+// Toast
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// Form handlers
+function handleLogin(){showToast('✓ Login successful!');closeModal();}
+function handleSignup(){showToast('✓ Account created! Welcome to EventsPlaner.com');closeModal();}
+function handlePlannerRegister(){
+  if(!document.getElementById('pName').value||!document.getElementById('pCity').value){
+    showToast('⚠ Please fill all required fields');return;
+  }
+  showToast('✓ Registration submitted! Payment coming soon.');closeModal();
+}
+
+// Init
+renderPlanners(demo);
+</script>
+</body>
+</html>
