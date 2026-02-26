@@ -3,229 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EventsPlaner.com – India's Best Wedding & Event Planners</title>
-<meta name="description" content="Find India's best verified event planners for weddings, birthdays & corporate events. Compare ratings, read reviews and book top professionals in your city.">
-<meta name="keywords" content="Event Planner India, Wedding Planner, Birthday Organizer, Corporate Event Management">
+<title>EventsPlaner.com – India's #1 Event Planner Network</title>
+<meta name="description" content="Find India's best verified event planners for weddings, birthdays & corporate events.">
 <link rel="canonical" href="https://eventsplaner.com/">
-<meta property="og:title" content="EventsPlaner.com – India's Best Wedding & Event Planners"/>
-<meta property="og:description" content="Find top-rated, verified event planners in your city."/>
-<meta property="og:url" content="https://eventsplaner.com/"/>
-<meta property="og:type" content="website"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","url":"https://eventsplaner.com","name":"EventsPlaner.com","potentialAction":{"@type":"SearchAction","target":"https://eventsplaner.com/?search={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#C9A84C;--gold-light:#E8C96D;--charcoal:#1C1C1E;--charcoal2:#242426;--charcoal3:#2E2E30;--charcoal4:#3A3A3C;--white:#F5F0E8;--gray:#8A8A8E;--lgray:#C7C7CC}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--charcoal);color:var(--white);font-family:'Jost',Arial,sans-serif;overflow-x:hidden}
+:root{--gold:#C9A84C;--gl:#E8C96D;--c1:#1C1C1E;--c2:#242426;--c3:#2E2E30;--c4:#3A3A3C;--w:#F5F0E8;--g:#8A8A8E;--lg:#C7C7CC}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--c1);color:var(--w);font-family:"Jost",Arial,sans-serif;overflow-x:hidden}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+a{text-decoration:none}
 
-/* NAV DESKTOP */
-nav{position:fixed;top:0;width:100%;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:20px 7%;background:rgba(28,28,30,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.2);transition:.3s}
-nav.scrolled{padding:14px 7%}
-.logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:1px}
-.logo span{color:var(--white)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{color:var(--lgray);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.8px;text-transform:uppercase;transition:.2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-btns{display:flex;gap:12px}
-.btn{padding:10px 24px;border-radius:3px;font-weight:600;font-size:.8rem;cursor:pointer;border:none;transition:.25s;font-family:'Jost',Arial,sans-serif;letter-spacing:.8px;text-transform:uppercase}
-.btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-.btn-outline:hover{background:var(--gold);color:var(--charcoal)}
-.btn-gold{background:var(--gold);color:var(--charcoal);font-weight:700}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px)}
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:18px 7%;background:rgba(28,28,30,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.2);transition:.3s}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:700;color:var(--gold);letter-spacing:1px}.logo span{color:var(--w)}
+.nav-links{display:flex;gap:32px;list-style:none}.nav-links a{color:var(--lg);font-size:.8rem;font-weight:500;letter-spacing:.8px;text-transform:uppercase;transition:.2s}.nav-links a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn{padding:9px 22px;border-radius:3px;font-weight:600;font-size:.78rem;cursor:pointer;border:none;transition:.25s;font-family:"Jost",Arial,sans-serif;letter-spacing:.8px;text-transform:uppercase}
+.btn-o{background:transparent;border:1px solid var(--gold);color:var(--gold)}.btn-o:hover{background:var(--gold);color:var(--c1)}
+.btn-g{background:var(--gold);color:var(--c1);font-weight:700}.btn-g:hover{background:var(--gl)}
 
-/* MOBILE NAV */
-.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:rgba(28,28,30,.98);backdrop-filter:blur(20px);border-top:1px solid rgba(201,168,76,.2);padding:8px 0 calc(8px + env(safe-area-inset-bottom))}
-.mob-nav-inner{display:flex;justify-content:space-around;align-items:center}
-.mob-item{display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--gray);text-decoration:none;font-size:.58rem;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;padding:4px 10px;transition:.2s;background:none;border:none;font-family:'Jost',Arial,sans-serif}
-.mob-item .ico{font-size:1.2rem}
-.mob-item:hover,.mob-item.active{color:var(--gold)}
-.mob-cta{background:var(--gold);color:var(--charcoal);border-radius:3px;padding:8px 14px;font-weight:700}
+/* Account button in nav */
+#acBtn{display:none;align-items:center;gap:8px;background:var(--c3);border:1px solid rgba(201,168,76,.35);color:var(--w);padding:7px 14px;border-radius:3px;cursor:pointer;font-size:.8rem;font-family:"Jost",Arial,sans-serif}
+#acAvatar{width:26px;height:26px;border-radius:50%;background:var(--c1);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--gold);font-weight:bold;overflow:hidden;flex-shrink:0}
 
-/* HERO */
+/* ── MOB NAV ── */
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:rgba(28,28,30,.98);backdrop-filter:blur(20px);border-top:1px solid rgba(201,168,76,.2);padding:8px 0 20px}
+.mob-inner{display:flex;justify-content:space-around}
+.mitem{display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--g);font-size:.58rem;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;padding:4px 8px;background:none;border:none;font-family:"Jost",Arial,sans-serif;transition:.2s}
+.mitem .ico{font-size:1.2rem}.mitem:hover,.mitem.active{color:var(--gold)}
+.mcta{background:var(--gold);color:var(--c1);border-radius:3px;padding:7px 14px;font-weight:700}
+
+/* ── HERO ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 6% 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(201,168,76,.1) 0%,transparent 70%);pointer-events:none}
-.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:24px}
-.eyebrow-line{width:40px;height:1px;background:var(--gold)}
-.eyebrow span{font-size:.72rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:500}
-.hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.4rem,7vw,6rem);line-height:1.1;font-weight:700}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(201,168,76,.1) 0%,transparent 70%);pointer-events:none}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.eline{width:36px;height:1px;background:var(--gold)}
+.eyebrow span{font-size:.7rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.4rem,7vw,5.5rem);line-height:1.1;font-weight:700}
 .hero h1 em{font-style:italic;color:var(--gold);display:block}
-.hero-sub{font-size:.95rem;color:var(--gray);max-width:480px;line-height:1.8;margin:20px auto 36px;font-weight:300}
+.hero-sub{font-size:.93rem;color:var(--g);max-width:460px;line-height:1.8;margin:18px auto 34px;font-weight:300}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.hero-btns .btn{padding:14px 36px;font-size:.85rem}
+.hero-btns .btn{padding:13px 34px;font-size:.83rem}
 
-/* SEARCH */
-.search-section{padding:0 6% 60px}
-.search-wrap{max-width:720px;margin:0 auto;background:var(--charcoal2);border:1px solid rgba(201,168,76,.3);border-radius:4px;overflow:hidden;display:flex;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.search-wrap select,.search-wrap input{background:transparent;border:none;outline:none;color:var(--white);font-family:'Jost',Arial,sans-serif;font-size:.9rem;padding:16px 18px}
-.search-wrap select{border-right:1px solid rgba(201,168,76,.15);color:var(--lgray);min-width:160px;cursor:pointer}
-.search-wrap select option{background:var(--charcoal2)}
-.search-wrap input{flex:1}
-.search-wrap input::placeholder{color:var(--gray)}
-.search-wrap button{background:var(--gold);border:none;padding:0 28px;color:var(--charcoal);font-weight:700;cursor:pointer;font-family:'Jost',Arial,sans-serif;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;transition:.2s;white-space:nowrap}
-.search-wrap button:hover{background:var(--gold-light)}
+/* ── SEARCH ── */
+.srch{padding:0 6% 56px}
+.srch-wrap{max-width:700px;margin:0 auto;background:var(--c2);border:1px solid rgba(201,168,76,.3);border-radius:4px;overflow:hidden;display:flex;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.srch-wrap select,.srch-wrap input{background:transparent;border:none;outline:none;color:var(--w);font-family:"Jost",Arial,sans-serif;font-size:.88rem;padding:15px 16px}
+.srch-wrap select{border-right:1px solid rgba(201,168,76,.15);color:var(--lg);min-width:160px;cursor:pointer}
+.srch-wrap select option{background:var(--c2)}
+.srch-wrap input{flex:1}.srch-wrap input::placeholder{color:var(--g)}
+.srch-wrap button{background:var(--gold);border:none;padding:0 26px;color:var(--c1);font-weight:700;cursor:pointer;font-family:"Jost",Arial,sans-serif;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;transition:.2s;white-space:nowrap}
 
-/* STATS */
-.stats-bar{display:flex;justify-content:center;border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12)}
-.stat-item{text-align:center;padding:40px 50px;border-right:1px solid rgba(201,168,76,.12);flex:1;min-width:120px}
-.stat-item:last-child{border-right:none}
-.stat-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.8rem;color:var(--gold);font-weight:700;line-height:1}
-.stat-label{font-size:.7rem;color:var(--gray);margin-top:6px;letter-spacing:1.5px;text-transform:uppercase}
+/* ── STATS ── */
+.stats{display:flex;justify-content:center;border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12)}
+.stat{text-align:center;padding:36px 44px;border-right:1px solid rgba(201,168,76,.12);flex:1}
+.stat:last-child{border-right:none}
+.snum{font-family:"Cormorant Garamond",serif;font-size:2.6rem;color:var(--gold);font-weight:700;line-height:1}
+.slbl{font-size:.68rem;color:var(--g);margin-top:5px;letter-spacing:1.5px;text-transform:uppercase}
 
-/* SECTION */
-section{padding:90px 7%}
-.sec-label{font-size:.7rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:block}
-.sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);margin-bottom:12px;font-weight:700}
-.sec-sub{color:var(--gray);font-size:.9rem;margin-bottom:48px;font-weight:300}
+/* ── SECTION ── */
+.sec{padding:88px 7%}
+.slabel{font-size:.68rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:block}
+.stitle{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:10px;font-weight:700}
+.ssub{color:var(--g);font-size:.88rem;margin-bottom:44px;font-weight:300}
 
-/* PLANNER CARDS */
-.planners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.planner-card{background:var(--charcoal2);border:1px solid rgba(255,255,255,.05);border-radius:4px;overflow:hidden;transition:.35s;cursor:pointer}
-.planner-card:hover{border-color:rgba(201,168,76,.5);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
-.card-top{height:150px;position:relative;background:linear-gradient(135deg,var(--charcoal3),var(--charcoal4));display:flex;align-items:center;justify-content:center}
-.card-avatar{width:68px;height:68px;border-radius:50%;background:var(--charcoal);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;color:var(--gold);font-weight:700}
-.card-plan-badge{position:absolute;top:12px;right:12px;font-size:.6rem;font-weight:700;padding:3px 9px;border-radius:2px;text-transform:uppercase;letter-spacing:.8px}
-.badge-prem{background:var(--gold);color:var(--charcoal)}
-.badge-pro{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-.verified-badge{position:absolute;bottom:10px;left:10px;background:rgba(28,28,30,.9);border:1px solid #4CAF82;color:#4CAF82;font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:2px;letter-spacing:.8px;text-transform:uppercase}
-.verified-badge::before{content:'✓ '}
-.card-body{padding:18px}
-.card-biz{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-weight:700;margin-bottom:4px}
-.card-city{font-size:.76rem;color:var(--gold);margin-bottom:10px}
-.card-city::before{content:'◈  '}
-.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.tag{background:var(--charcoal3);font-size:.68rem;padding:4px 9px;border-radius:2px;color:var(--lgray)}
-.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(255,255,255,.05)}
-.card-rating{color:var(--gold);font-size:.84rem;font-weight:600}
-.card-reviews{color:var(--gray);font-size:.74rem;margin-left:4px}
-.card-cta{background:transparent;border:1px solid rgba(201,168,76,.4);color:var(--gold);padding:6px 14px;border-radius:2px;font-size:.68rem;cursor:pointer;transition:.2s;font-family:'Jost',Arial,sans-serif;letter-spacing:.8px;text-transform:uppercase}
-.card-cta:hover{background:var(--gold);color:var(--charcoal)}
+/* ── CARDS ── */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.pcard{background:var(--c2);border:1px solid rgba(255,255,255,.05);border-radius:4px;overflow:hidden;transition:.3s;cursor:pointer}
+.pcard:hover{border-color:rgba(201,168,76,.5);transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.ctop{height:140px;position:relative;background:linear-gradient(135deg,var(--c3),var(--c4));display:flex;align-items:center;justify-content:center}
+.cav{width:64px;height:64px;border-radius:50%;background:var(--c1);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--gold);font-weight:700;overflow:hidden}
+.cbadge{position:absolute;top:10px;right:10px;font-size:.58rem;font-weight:700;padding:3px 8px;border-radius:2px;text-transform:uppercase;letter-spacing:.8px}
+.bprem{background:var(--gold);color:var(--c1)}.bpro{border:1px solid var(--gold);color:var(--gold)}
+.vbadge{position:absolute;bottom:8px;left:8px;background:rgba(28,28,30,.9);border:1px solid #4CAF82;color:#4CAF82;font-size:.58rem;font-weight:700;padding:3px 7px;border-radius:2px;text-transform:uppercase}
+.cbody{padding:16px}
+.cbiz{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.ccity{font-size:.74rem;color:var(--gold);margin-bottom:9px}
+.ctags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tag{background:var(--c3);font-size:.66rem;padding:3px 8px;border-radius:2px;color:var(--lg)}
+.cfoot{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)}
+.crat{color:var(--gold);font-size:.82rem;font-weight:600}
+.crev{color:var(--g);font-size:.72rem;margin-left:4px}
+.ccta{background:transparent;border:1px solid rgba(201,168,76,.4);color:var(--gold);padding:6px 12px;border-radius:2px;font-size:.66rem;cursor:pointer;transition:.2s;font-family:"Jost",Arial,sans-serif;text-transform:uppercase}
+.ccta:hover{background:var(--gold);color:var(--c1)}
 
-/* HOW */
-.how-section{background:var(--charcoal2)}
+/* ── HOW ── */
+.how{background:var(--c2)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px}
-.step{padding:44px 28px;background:var(--charcoal2);border:1px solid rgba(201,168,76,.08);transition:.3s;text-align:center}
-.step:hover{background:var(--charcoal3);border-color:rgba(201,168,76,.3)}
-.step-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:3.5rem;color:rgba(201,168,76,.1);font-weight:700;line-height:1;margin-bottom:14px}
-.step-icon{font-size:1.8rem;margin-bottom:12px}
-.step h3{font-size:.86rem;font-weight:600;margin-bottom:8px;letter-spacing:.8px;text-transform:uppercase}
-.step p{font-size:.84rem;color:var(--gray);line-height:1.7;font-weight:300}
+.step{padding:40px 24px;background:var(--c2);border:1px solid rgba(201,168,76,.08);transition:.3s;text-align:center}
+.step:hover{background:var(--c3);border-color:rgba(201,168,76,.3)}
+.snum2{font-family:"Cormorant Garamond",serif;font-size:3rem;color:rgba(201,168,76,.1);font-weight:700;line-height:1;margin-bottom:12px}
+.sico{font-size:1.7rem;margin-bottom:10px}
+.step h3{font-size:.84rem;font-weight:600;margin-bottom:7px;letter-spacing:.8px;text-transform:uppercase}
+.step p{font-size:.82rem;color:var(--g);line-height:1.7;font-weight:300}
 
-/* PRICING */
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;max-width:900px;margin:0 auto;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.1)}
-.price-card{background:var(--charcoal2);padding:44px 32px;text-align:center;position:relative;transition:.3s}
-.price-card:hover,.price-card.featured{background:var(--charcoal3)}
-.feat-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--charcoal);font-size:.62rem;font-weight:700;padding:4px 18px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
-.price-plan{font-size:.7rem;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;margin-top:14px}
-.price-amt{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.8rem;color:var(--gold);font-weight:700}
-.price-amt span{font-size:.88rem;color:var(--gray);font-family:'Jost',Arial,sans-serif}
-.price-divider{width:40px;height:1px;background:var(--gold);margin:20px auto}
-.price-card ul{list-style:none;text-align:left;margin-bottom:28px}
-.price-card ul li{font-size:.83rem;color:var(--lgray);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-weight:300;display:flex;align-items:center;gap:8px}
-.price-card ul li::before{content:'—';color:var(--gold);font-weight:700}
-.price-card .btn{width:100%;padding:13px;font-size:.78rem}
+/* ── PRICING ── */
+.pgrd{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;max-width:880px;margin:0 auto;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.1)}
+.pcrd{background:var(--c2);padding:40px 28px;text-align:center;position:relative;transition:.3s}
+.pcrd:hover,.pcrd.feat{background:var(--c3)}
+.fbadge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--c1);font-size:.6rem;font-weight:700;padding:4px 18px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.pplan{font-size:.68rem;color:var(--g);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;margin-top:12px}
+.pamt{font-family:"Cormorant Garamond",serif;font-size:2.6rem;color:var(--gold);font-weight:700}
+.pamt small{font-size:.86rem;color:var(--g);font-family:"Jost",Arial,sans-serif}
+.pdiv{width:36px;height:1px;background:var(--gold);margin:18px auto}
+.pcrd ul{list-style:none;text-align:left;margin-bottom:24px}
+.pcrd ul li{font-size:.81rem;color:var(--lg);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-weight:300;display:flex;align-items:center;gap:7px}
+.pcrd ul li::before{content:"—";color:var(--gold);font-weight:700}
+.pcrd .btn{width:100%;padding:12px;font-size:.76rem}
 
-/* FAQ */
-.faq-list{max-width:780px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(201,168,76,.12);overflow:hidden}
-.faq-question{width:100%;background:none;border:none;color:var(--white);font-family:'Jost',Arial,sans-serif;font-size:.92rem;font-weight:500;padding:20px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:.2s}
-.faq-question:hover{color:var(--gold)}
-.faq-icon{font-size:1.1rem;color:var(--gold);transition:.3s;flex-shrink:0}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:.4s ease}
-.faq-answer p{color:var(--gray);font-size:.87rem;line-height:1.8;padding-bottom:20px;font-weight:300}
-.faq-item.open .faq-answer{max-height:200px}
+/* ── FAQ ── */
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(201,168,76,.12)}
+.faq-q{width:100%;background:none;border:none;color:var(--w);font-family:"Jost",Arial,sans-serif;font-size:.9rem;font-weight:500;padding:18px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-q:hover{color:var(--gold)}
+.ficon{color:var(--gold);transition:.3s;flex-shrink:0}
+.faq-item.open .ficon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:.4s}
+.faq-a p{color:var(--g);font-size:.85rem;line-height:1.8;padding-bottom:18px;font-weight:300}
+.faq-item.open .faq-a{max-height:200px}
 
-/* MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
-.modal-overlay.active{display:flex}
-.modal{background:var(--charcoal2);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:40px 32px;width:100%;max-width:460px;position:relative;max-height:90vh;overflow-y:auto}
-.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--gray);font-size:1.3rem;cursor:pointer}
-.modal-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;margin-bottom:4px;font-weight:700}
-.modal-sub{color:var(--gray);font-size:.83rem;margin-bottom:28px;font-weight:300}
-.tab-btns{display:flex;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:28px}
-.tab-btn{flex:1;background:none;border:none;color:var(--gray);padding:11px;cursor:pointer;font-family:'Jost',Arial,sans-serif;font-size:.78rem;font-weight:500;transition:.2s;letter-spacing:.8px;text-transform:uppercase}
-.tab-btn.active{color:var(--gold);border-bottom:1px solid var(--gold)}
-.tab-content{display:none}.tab-content.active{display:block}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:.7rem;color:var(--gray);margin-bottom:6px;letter-spacing:.8px;text-transform:uppercase}
-.form-group input,.form-group select{width:100%;padding:12px 14px;background:var(--charcoal3);border:1px solid rgba(255,255,255,.08);border-radius:3px;color:var(--white);font-family:'Jost',Arial,sans-serif;font-size:.88rem;outline:none;transition:.2s}
-.form-group input:focus,.form-group select:focus{border-color:var(--gold)}
-.form-group select option{background:var(--charcoal3)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-submit{width:100%;padding:13px;font-size:.84rem;margin-top:6px}
+/* ── FOOTER ── */
+footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:52px 7% 26px}
+.ftop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:36px;flex-wrap:wrap;gap:24px}
+.flogo{font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--gold);font-weight:700}
+.fbrand p{color:var(--g);font-size:.81rem;margin-top:7px;max-width:230px;line-height:1.7;font-weight:300}
+.flinks{display:flex;gap:44px;flex-wrap:wrap}
+.fcol h4{font-size:.66rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.fcol a{display:block;color:var(--g);font-size:.81rem;margin-bottom:8px;transition:.2s;font-weight:300}
+.fcol a:hover{color:var(--w)}
+.fcities{margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.05)}
+.fcities h4{font-size:.66rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.clinks{display:flex;flex-wrap:wrap;gap:7px}
+.clinks a{color:var(--g);font-size:.74rem;border:1px solid rgba(201,168,76,.15);padding:4px 11px;border-radius:3px;transition:.2s}
+.clinks a:hover{color:var(--gold);border-color:rgba(201,168,76,.4)}
+.fbot{border-top:1px solid rgba(255,255,255,.05);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:22px}
+.fbot p{color:var(--g);font-size:.74rem}
 
-/* FOOTER */
-footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:56px 7% 28px}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:28px}
-.footer-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;color:var(--gold);font-weight:700}
-.footer-brand p{color:var(--gray);font-size:.83rem;margin-top:8px;max-width:240px;line-height:1.7;font-weight:300}
-.footer-links-group{display:flex;gap:50px;flex-wrap:wrap}
-.footer-col h4{font-size:.68rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-.footer-col a{display:block;color:var(--gray);text-decoration:none;font-size:.83rem;margin-bottom:9px;transition:.2s;font-weight:300}
-.footer-col a:hover{color:var(--white)}
-.footer-cities{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.05)}
-.footer-cities h4{font-size:.68rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-.city-links{display:flex;flex-wrap:wrap;gap:8px}
-.city-links a{color:var(--gray);text-decoration:none;font-size:.76rem;border:1px solid rgba(201,168,76,.15);padding:5px 12px;border-radius:3px;transition:.2s}
-.city-links a:hover{color:var(--gold);border-color:rgba(201,168,76,.4)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:24px}
-.footer-bottom p{color:var(--gray);font-size:.76rem}
+/* ── OVERLAY / MODAL ── */
+.overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px}
+.overlay.on{display:flex}
+.modal{background:var(--c2);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:36px 28px;width:100%;max-width:460px;position:relative;max-height:92vh;overflow-y:auto}
+.mcls{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--g);font-size:1.3rem;cursor:pointer}
+.mtitle{font-family:"Cormorant Garamond",serif;font-size:1.65rem;margin-bottom:3px;font-weight:700}
+.msub{color:var(--g);font-size:.81rem;margin-bottom:24px;font-weight:300}
+.tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:24px}
+.tab{flex:1;background:none;border:none;color:var(--g);padding:10px;cursor:pointer;font-family:"Jost",Arial,sans-serif;font-size:.76rem;font-weight:500;transition:.2s;letter-spacing:.8px;text-transform:uppercase}
+.tab.on{color:var(--gold);border-bottom:1px solid var(--gold)}
+.tp{display:none}.tp.on{display:block}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:.68rem;color:var(--g);margin-bottom:5px;letter-spacing:.8px;text-transform:uppercase}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 13px;background:var(--c3);border:1px solid rgba(255,255,255,.08);border-radius:3px;color:var(--w);font-family:"Jost",Arial,sans-serif;font-size:.86rem;outline:none;transition:.2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg select option{background:var(--c3)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.fsub{width:100%;padding:12px;font-size:.82rem;margin-top:5px}
+.gBtn{width:100%;padding:11px;background:#fff;border:1px solid #ddd;border-radius:3px;cursor:pointer;font-size:.83rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:9px;color:#333;margin-bottom:14px}
+.gBtn img{width:17px;height:17px}
+.divider{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.divider div{flex:1;height:1px;background:rgba(255,255,255,.1)}
+.divider span{color:var(--g);font-size:.72rem}
 
-/* TOAST */
-.toast{position:fixed;bottom:90px;right:24px;z-index:99999;background:var(--charcoal3);border:1px solid var(--gold);color:var(--white);padding:13px 22px;border-radius:3px;font-size:.86rem;transform:translateY(60px);opacity:0;transition:.4s;box-shadow:0 10px 40px rgba(0,0,0,.6)}
-.toast.show{transform:translateY(0);opacity:1}
+/* Photo upload */
+.photo-box{border:2px dashed rgba(201,168,76,.3);border-radius:4px;padding:18px;text-align:center;cursor:pointer;transition:.2s;background:var(--c3);position:relative}
+.photo-box:hover{border-color:var(--gold)}
+.photo-box input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.photo-preview{display:none;margin-bottom:8px}
+.photo-preview img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
 
-/* RESPONSIVE */
+/* ── ACCOUNT PANEL ── */
+#acPanel{display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);align-items:flex-start;justify-content:flex-end;padding:80px 20px 20px}
+#acPanel.on{display:flex}
+.acBox{background:var(--c2);border:1px solid rgba(201,168,76,.25);border-radius:4px;width:100%;max-width:380px;max-height:85vh;overflow-y:auto}
+.acHead{background:var(--c3);padding:18px 20px;border-bottom:1px solid rgba(201,168,76,.15);display:flex;justify-content:space-between;align-items:center}
+.acHead h3{font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--gold);font-weight:700}
+.acBody{padding:20px}
+.acProfile{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.06)}
+.acAv{width:52px;height:52px;border-radius:50%;background:var(--c3);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--gold);font-weight:bold;overflow:hidden;flex-shrink:0}
+.acName{font-weight:600;font-size:.96rem}
+.acPlan{color:var(--g);font-size:.76rem;margin-top:3px}
+.acTabs{display:flex;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:18px}
+.acTab{flex:1;background:none;border:none;color:var(--g);padding:10px;cursor:pointer;font-family:"Jost",Arial,sans-serif;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.acTab.on{color:var(--gold);border-bottom:1px solid var(--gold)}
+.acPaneWrap .acPane{display:none}.acPaneWrap .acPane.on{display:block}
+.bizCard{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:16px;margin-bottom:14px}
+.bizCard h4{font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.infoRow{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem}
+.infoRow span:first-child{color:var(--g)}
+.infoRow span:last-child{color:var(--w);font-weight:500}
+.acBtn{width:100%;padding:11px;font-size:.78rem;margin-bottom:8px}
+.logoutBtn{width:100%;padding:10px;background:transparent;border:1px solid rgba(255,100,100,.3);color:#ff6b6b;border-radius:3px;cursor:pointer;font-size:.78rem;font-family:"Jost",Arial,sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.addBizForm{background:var(--c3);border-radius:4px;padding:16px;margin-top:12px}
+.addBizForm h4{font-size:.68rem;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.statusBadge{display:inline-block;font-size:.62rem;font-weight:700;padding:3px 8px;border-radius:3px;text-transform:uppercase}
+.s-active{background:rgba(76,175,82,.15);color:#4CAF82;border:1px solid rgba(76,175,82,.3)}
+.s-pending{background:rgba(255,193,7,.1);color:#ffc107;border:1px solid rgba(255,193,7,.3)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:88px;right:20px;z-index:99999;background:var(--c3);border:1px solid var(--gold);color:var(--w);padding:12px 20px;border-radius:3px;font-size:.84rem;transform:translateY(50px);opacity:0;transition:.4s;box-shadow:0 10px 40px rgba(0,0,0,.6);max-width:300px}
+.toast.on{transform:translateY(0);opacity:1}
+
+/* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .nav-links,.nav-btns{display:none}
-  .mob-nav{display:block}
-  body{padding-bottom:72px}
-  nav{padding:16px 5%}
-
-  .hero{padding:90px 5% 60px;min-height:auto}
-  .hero h1{font-size:clamp(2rem,8vw,3rem)}
-  .hero-sub{font-size:.88rem;margin:16px auto 28px}
-  .hero-btns .btn{padding:12px 22px;font-size:.82rem}
-  .eyebrow span{font-size:.66rem;letter-spacing:2px}
-
-  .search-section{padding:0 4% 44px}
-  .search-wrap{flex-direction:column}
-  .search-wrap select{border-right:none;border-bottom:1px solid rgba(201,168,76,.15);min-width:100%}
-  .search-wrap button{padding:13px;width:100%}
-
-  .stats-bar{flex-wrap:wrap}
-  .stat-item{padding:26px 20px;flex:1;min-width:50%}
-  .stat-item:nth-child(2){border-right:none}
-  .stat-num{font-size:2.2rem}
-
-  section{padding:56px 5%}
-  .sec-title{font-size:1.7rem}
-  .planners-grid{grid-template-columns:1fr}
+  .nav-links,.nav-right{display:none!important}
+  .mob-nav{display:block}body{padding-bottom:70px}
+  nav{padding:15px 4%}
+  #acBtn{display:none!important}
+  .hero{padding:88px 5% 56px;min-height:auto}
+  .hero h1{font-size:clamp(1.9rem,8vw,3rem)}
+  .hero-sub{font-size:.86rem;margin:14px auto 26px}
+  .hero-btns .btn{padding:11px 20px;font-size:.8rem}
+  .srch{padding:0 4% 40px}
+  .srch-wrap{flex-direction:column}
+  .srch-wrap select{border-right:none;border-bottom:1px solid rgba(201,168,76,.15);min-width:100%}
+  .srch-wrap button{padding:12px;width:100%}
+  .stats{flex-wrap:wrap}
+  .stat{padding:22px 16px;flex:1;min-width:50%}
+  .stat:nth-child(2){border-right:none}
+  .snum{font-size:2rem}
+  .sec{padding:52px 5%}
+  .stitle{font-size:1.65rem}
+  .pgrid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
-  .pricing-grid{grid-template-columns:1fr}
-  .price-card{padding:32px 22px}
-
-  .footer-top{flex-direction:column}
-  .footer-links-group{gap:28px}
-  .form-row{grid-template-columns:1fr}
-  .toast{bottom:90px;right:12px;left:12px}
-  .modal{padding:32px 22px}
+  .pgrd{grid-template-columns:1fr}
+  .ftop{flex-direction:column}
+  .flinks{gap:24px}
+  .fr{grid-template-columns:1fr}
+  .modal{padding:28px 20px}
+  .toast{right:10px;left:10px}
+  #acPanel{padding:80px 10px 10px}
 }
 @media(max-width:480px){
   .steps{grid-template-columns:1fr}
-  .stat-item{min-width:50%}
+  .stat{min-width:50%}
 }
 </style>
 </head>
 <body>
 
-<!-- DESKTOP NAV -->
+<!-- NAV -->
 <nav id="mainNav">
   <a href="/" class="logo">Events<span>Planer</span>.com</a>
   <ul class="nav-links">
@@ -234,537 +251,653 @@ footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:56px
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <div class="nav-btns" id="navBtns">
-    <button class="btn btn-outline" onclick="openModal('login')">Login</button>
-    <button class="btn btn-gold" onclick="openModal('register')">Join as Planner</button>
+  <div class="nav-right" id="navGuest">
+    <button class="btn btn-o" onclick="openModal('login')">Login</button>
+    <button class="btn btn-g" onclick="openModal('register')">Join as Planner</button>
   </div>
-  <div id="navAccount" style="display:none;align-items:center;gap:10px">
-    <button onclick="openDashboard()" style="display:flex;align-items:center;gap:8px;background:var(--charcoal3);border:1px solid rgba(201,168,76,.3);color:var(--white);padding:8px 16px;border-radius:3px;cursor:pointer;font-size:.82rem;font-family:Jost,Arial,sans-serif">
-      <div id="navAvatarImg" style="width:28px;height:28px;border-radius:50%;background:var(--charcoal);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--gold);font-weight:bold;overflow:hidden"></div>
-      <span id="navUserName">My Account</span>
-      <span style="color:var(--gold)">▾</span>
+  <div class="nav-right" id="navUser" style="display:none">
+    <button id="acBtn" onclick="openAccount()">
+      <div id="acAvatar"></div>
+      <span id="acName">My Account</span>
+      <span style="color:var(--gold);font-size:.7rem">▾</span>
     </button>
-    <button onclick="doLogout()" style="background:none;border:1px solid rgba(255,100,100,.3);color:#ff6b6b;padding:7px 13px;border-radius:3px;font-size:.78rem;cursor:pointer">Logout</button>
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
+<!-- MOB NAV -->
 <nav class="mob-nav">
-  <div class="mob-nav-inner">
-    <a href="#planners" class="mob-item active"><span class="ico">🔍</span><span>Find</span></a>
-    <a href="#how" class="mob-item"><span class="ico">⭐</span><span>How</span></a>
-    <button class="mob-item mob-cta" onclick="openModal('register')"><span class="ico">＋</span><span>Join</span></button>
-    <a href="#pricing" class="mob-item"><span class="ico">💎</span><span>Plans</span></a>
-    <a href="#faq" class="mob-item"><span class="ico">❓</span><span>FAQ</span></a>
+  <div class="mob-inner">
+    <a href="#planners" class="mitem active"><span class="ico">🔍</span><span>Find</span></a>
+    <a href="#how" class="mitem"><span class="ico">⭐</span><span>How</span></a>
+    <button class="mitem mcta" onclick="openModal('register')"><span class="ico">＋</span><span>Join</span></button>
+    <a href="#pricing" class="mitem"><span class="ico">💎</span><span>Plans</span></a>
+    <button class="mitem" onclick="openAccount()"><span class="ico">👤</span><span>Account</span></button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="eyebrow">
-    <div class="eyebrow-line"></div>
-    <span>India's #1 Event Planner Network</span>
-    <div class="eyebrow-line"></div>
-  </div>
+  <div class="eyebrow"><div class="eline"></div><span>India's #1 Event Planner Network</span><div class="eline"></div></div>
   <h1>Find Your City's<em>Best Event Planner</em></h1>
   <p class="hero-sub">Weddings, Birthdays, Corporate Events — Connect with India's top-rated, verified event professionals.</p>
   <div class="hero-btns">
-    <button class="btn btn-gold" onclick="document.getElementById('planners').scrollIntoView({behavior:'smooth'})">Explore Planners</button>
-    <button class="btn btn-outline" onclick="openModal('register')">List Your Business</button>
+    <button class="btn btn-g" onclick="document.getElementById('planners').scrollIntoView({behavior:'smooth'})">Explore Planners</button>
+    <button class="btn btn-o" onclick="openModal('register')">List Your Business</button>
   </div>
 </section>
 
 <!-- SEARCH -->
-<div class="search-section">
-  <div class="search-wrap">
-    <select id="cityFilter" onchange="filterPlanners()">
+<div class="srch">
+  <div class="srch-wrap">
+    <select id="cf" onchange="fp()">
       <option value="">All Cities</option>
       <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
       <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
-      <option>Jaipur</option><option>Kolkata</option><option>Ahmedabad</option><option>Lucknow</option>
-      <option>Ranchi</option><option>Jamshedpur</option><option>Patna</option>
-      <option>Chandigarh</option><option>Indore</option><option>Surat</option>
-      <option>Nagpur</option><option>Varanasi</option><option>Agra</option>
-      <option>Bhopal</option><option>Coimbatore</option><option>Dhanbad</option>
-      <option>Bokaro</option><option>Deoghar</option><option>Hazaribagh</option>
+      <option>Jaipur</option><option>Kolkata</option><option>Ahmedabad</option>
+      <option>Lucknow</option><option>Ranchi</option><option>Jamshedpur</option>
+      <option>Patna</option><option>Dhanbad</option><option>Bokaro</option>
+      <option>Deoghar</option><option>Hazaribagh</option><option>Chandigarh</option>
+      <option>Indore</option><option>Surat</option><option>Nagpur</option>
+      <option>Varanasi</option><option>Agra</option><option>Bhopal</option>
+      <option>Coimbatore</option><option>Guwahati</option><option>Kochi</option>
     </select>
-    <input type="text" id="searchInput" placeholder="Search by event type or planner name..." oninput="filterPlanners()">
-    <button onclick="filterPlanners()">Search</button>
+    <input type="text" id="si" placeholder="Search by event type or planner name..." oninput="fp()">
+    <button onclick="fp()">Search</button>
   </div>
 </div>
 
 <!-- STATS -->
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">1,240+</div><div class="stat-label">Verified Planners</div></div>
-  <div class="stat-item"><div class="stat-num">28+</div><div class="stat-label">Cities Covered</div></div>
-  <div class="stat-item"><div class="stat-num">8,500+</div><div class="stat-label">Events Delivered</div></div>
-  <div class="stat-item"><div class="stat-num">4.8★</div><div class="stat-label">Average Rating</div></div>
+<div class="stats">
+  <div class="stat"><div class="snum">1,240+</div><div class="slbl">Verified Planners</div></div>
+  <div class="stat"><div class="snum">28+</div><div class="slbl">Cities Covered</div></div>
+  <div class="stat"><div class="snum">8,500+</div><div class="slbl">Events Delivered</div></div>
+  <div class="stat"><div class="snum">4.8★</div><div class="slbl">Average Rating</div></div>
 </div>
 
 <!-- PLANNERS -->
-<section id="planners">
-  <span class="sec-label">Discover</span>
-  <h2 class="sec-title">Top Event <span style="color:var(--gold)">Planners</span></h2>
-  <p class="sec-sub">Verified professionals — Read reviews, compare portfolios & book with confidence</p>
-  <div class="planners-grid" id="plannersGrid"></div>
+<section class="sec" id="planners">
+  <span class="slabel">Discover</span>
+  <h2 class="stitle">Top Event <span style="color:var(--gold)">Planners</span></h2>
+  <p class="ssub">Verified professionals — Read reviews, compare portfolios & book with confidence</p>
+  <div class="pgrid" id="pg"></div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="how-section" id="how">
-  <div style="text-align:center;margin-bottom:56px">
-    <span class="sec-label">Process</span>
-    <h2 class="sec-title">How It <span style="color:var(--gold)">Works</span></h2>
-    <p class="sec-sub">Three simple steps to your perfect event planner</p>
+<!-- HOW -->
+<section class="sec how" id="how">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="slabel">Process</span>
+    <h2 class="stitle">How It <span style="color:var(--gold)">Works</span></h2>
+    <p class="ssub">Simple steps to your perfect event planner</p>
   </div>
   <div class="steps">
-    <div class="step"><div class="step-num">01</div><div class="step-icon">🏙️</div><h3>Choose Your City</h3><p>Select your city and browse top-rated planners available in your area.</p></div>
-    <div class="step"><div class="step-num">02</div><div class="step-icon">⭐</div><h3>Compare & Evaluate</h3><p>Review ratings, portfolios and client reviews to find your ideal match.</p></div>
-    <div class="step"><div class="step-num">03</div><div class="step-icon">🎊</div><h3>Book & Celebrate</h3><p>Contact your chosen planner directly and start planning your dream event.</p></div>
-    <div class="step"><div class="step-num">04</div><div class="step-icon">💬</div><h3>Leave a Review</h3><p>Share your experience to help others find great planners in their city.</p></div>
+    <div class="step"><div class="snum2">01</div><div class="sico">🏙️</div><h3>Choose City</h3><p>Select your city and browse top-rated planners in your area.</p></div>
+    <div class="step"><div class="snum2">02</div><div class="sico">⭐</div><h3>Compare</h3><p>Review ratings, portfolios and client reviews.</p></div>
+    <div class="step"><div class="snum2">03</div><div class="sico">🎊</div><h3>Book</h3><p>Contact your chosen planner directly.</p></div>
+    <div class="step"><div class="snum2">04</div><div class="sico">💬</div><h3>Review</h3><p>Share your experience to help others.</p></div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing">
-  <div style="text-align:center;margin-bottom:56px">
-    <span class="sec-label">For Planners</span>
-    <h2 class="sec-title">Subscription <span style="color:var(--gold)">Plans</span></h2>
-    <p class="sec-sub">Join India's fastest growing event planning marketplace</p>
+<section class="sec" id="pricing">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="slabel">For Planners</span>
+    <h2 class="stitle">Subscription <span style="color:var(--gold)">Plans</span></h2>
+    <p class="ssub">Join India's fastest growing event planning marketplace</p>
   </div>
-  <div class="pricing-grid">
-    <div class="price-card">
-      <div class="price-plan">Basic</div>
-      <div class="price-amt" style="color:#4CAF82">FREE <span style="color:var(--gray)">forever</span></div>
-      <div class="price-divider"></div>
-      <ul><li>Profile listing</li><li>1 City listing</li><li>Up to 5 photos</li><li>Customer inquiries</li></ul>
-      <button class="btn btn-outline" onclick="openModal('register')">Get Started</button>
+  <div class="pgrd">
+    <div class="pcrd">
+      <div class="pplan">Basic</div>
+      <div class="pamt" style="color:#4CAF82">FREE <small>forever</small></div>
+      <div class="pdiv"></div>
+      <ul><li>Profile listing</li><li>1 City</li><li>Up to 5 photos</li><li>Customer inquiries</li></ul>
+      <button class="btn btn-o" onclick="openModal('register')">Get Started Free</button>
     </div>
-    <div class="price-card featured">
-      <div class="feat-badge">Most Popular</div>
-      <div class="price-plan">Professional</div>
-      <div class="price-amt">₹499 <span>/ month</span></div>
-      <div class="price-divider"></div>
-      <ul><li>Featured listing</li><li>3 Cities</li><li>Unlimited photos</li><li>✓ Verified badge</li><li>Analytics dashboard</li></ul>
-      <button class="btn btn-gold" onclick="openModal('register')">Subscribe Now</button>
+    <div class="pcrd feat">
+      <div class="fbadge">Most Popular</div>
+      <div class="pplan">Professional</div>
+      <div class="pamt">₹499 <small>/ month</small></div>
+      <div class="pdiv"></div>
+      <ul><li>Featured listing</li><li>3 Cities</li><li>Unlimited photos</li><li>✓ Verified badge</li><li>Analytics</li></ul>
+      <button class="btn btn-g" onclick="openModal('register')">Subscribe Now</button>
     </div>
-    <div class="price-card">
-      <div class="price-plan">Premium</div>
-      <div class="price-amt">₹999 <span>/ month</span></div>
-      <div class="price-divider"></div>
-      <ul><li>Top placement</li><li>All India listing</li><li>Gold Verified badge</li><li>24/7 Support</li><li>Social promotion</li></ul>
-      <button class="btn btn-outline" onclick="openModal('register')">Go Premium</button>
+    <div class="pcrd">
+      <div class="pplan">Premium</div>
+      <div class="pamt">₹999 <small>/ month</small></div>
+      <div class="pdiv"></div>
+      <ul><li>Top placement</li><li>All India</li><li>Gold Verified</li><li>24/7 Support</li><li>Social promotion</li></ul>
+      <button class="btn btn-o" onclick="openModal('register')">Go Premium</button>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq">
-  <div style="text-align:center;margin-bottom:56px">
-    <span class="sec-label">Support</span>
-    <h2 class="sec-title">Frequently Asked <span style="color:var(--gold)">Questions</span></h2>
-    <p class="sec-sub">Everything you need to know about EventsPlaner.com</p>
+<section class="sec" id="faq">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="slabel">Support</span>
+    <h2 class="stitle">Frequently Asked <span style="color:var(--gold)">Questions</span></h2>
   </div>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How do I find an event planner in my city? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Select your city from the search bar, enter your event type and browse our verified planners. Compare ratings, read reviews and contact directly — all free.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Are all planners verified? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes. Every planner goes through a strict verification process before their profile goes live. Professional and Premium subscribers get a green Verified badge.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Is it free for customers? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Absolutely free. Browsing, reading reviews and contacting planners is 100% free for customers. Only planners pay a monthly subscription.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How much does listing cost? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Basic ₹499/month, Professional ₹999/month, Premium ₹1,999/month. No long-term contracts — cancel anytime.</p></div></div>
-    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I cancel anytime? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes, cancel anytime from your dashboard. Your profile stays active until end of billing period with no cancellation fees.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">How do I find an event planner? <span class="ficon">+</span></button><div class="faq-a"><p>Select your city, enter event type and browse verified planners. Compare ratings, read reviews — all free.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Are all planners verified? <span class="ficon">+</span></button><div class="faq-a"><p>Yes. Every planner is verified before going live. Pro and Premium subscribers get a Verified badge.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Is it free for customers? <span class="ficon">+</span></button><div class="faq-a"><p>100% free for customers. Browsing, reviews and contacting planners is always free.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Can I cancel anytime? <span class="ficon">+</span></button><div class="faq-a"><p>Yes, cancel anytime. Your profile stays active till end of billing period. No cancellation fees.</p></div></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">EventsPlaner.com</div>
-      <p>India's leading platform connecting event seekers with verified professional planners.</p>
+  <div class="ftop">
+    <div class="fbrand">
+      <div class="flogo">EventsPlaner.com</div>
+      <p>India's #1 platform connecting event seekers with verified professional planners.</p>
     </div>
-    <div class="footer-links-group">
-      <div class="footer-col">
-        <h4>Platform</h4>
-        <a href="#planners">Find Planners</a>
-        <a href="#how">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-      </div>
+    <div class="flinks">
+      <div class="fcol"><h4>Platform</h4><a href="#planners">Find Planners</a><a href="#how">How It Works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+      <div class="fcol"><h4>Company</h4><a href="#">About Us</a><a href="#">Contact</a><a href="#">Privacy</a><a href="#">Terms</a></div>
     </div>
   </div>
-  <div class="footer-cities">
+  <div class="fcities">
     <h4>Service Locations</h4>
-    <div class="city-links">
-      <a href="/city.html?city=delhi">Delhi</a>
-      <a href="/city.html?city=mumbai">Mumbai</a>
-      <a href="/city.html?city=bangalore">Bangalore</a>
-      <a href="/city.html?city=hyderabad">Hyderabad</a>
-      <a href="/city.html?city=chennai">Chennai</a>
-      <a href="/city.html?city=pune">Pune</a>
-      <a href="/city.html?city=jaipur">Jaipur</a>
-      <a href="/city.html?city=kolkata">Kolkata</a>
-      <a href="/city.html?city=ranchi">Ranchi</a>
-      <a href="/city.html?city=jamshedpur">Jamshedpur</a>
-      <a href="/city.html?city=patna">Patna</a>
-      <a href="/city.html?city=dhanbad">Dhanbad</a>
-      <a href="/city.html?city=lucknow">Lucknow</a>
-      <a href="/city.html?city=ahmedabad">Ahmedabad</a>
-      <a href="/city.html?city=chandigarh">Chandigarh</a>
-      <a href="/city.html?city=indore">Indore</a>
-      <a href="/city.html?city=surat">Surat</a>
-      <a href="/city.html?city=nagpur">Nagpur</a>
-      <a href="/city.html?city=varanasi">Varanasi</a>
-      <a href="/city.html?city=agra">Agra</a>
-      <a href="/city.html?city=bhopal">Bhopal</a>
-      <a href="/city.html?city=patna">Patna</a>
-      <a href="/city.html?city=coimbatore">Coimbatore</a>
+    <div class="clinks">
+      <a href="/city.html?city=delhi">Delhi</a><a href="/city.html?city=mumbai">Mumbai</a>
+      <a href="/city.html?city=bangalore">Bangalore</a><a href="/city.html?city=hyderabad">Hyderabad</a>
+      <a href="/city.html?city=chennai">Chennai</a><a href="/city.html?city=pune">Pune</a>
+      <a href="/city.html?city=jaipur">Jaipur</a><a href="/city.html?city=kolkata">Kolkata</a>
+      <a href="/city.html?city=ranchi">Ranchi</a><a href="/city.html?city=jamshedpur">Jamshedpur</a>
+      <a href="/city.html?city=patna">Patna</a><a href="/city.html?city=dhanbad">Dhanbad</a>
+      <a href="/city.html?city=bokaro">Bokaro</a><a href="/city.html?city=lucknow">Lucknow</a>
+      <a href="/city.html?city=ahmedabad">Ahmedabad</a><a href="/city.html?city=chandigarh">Chandigarh</a>
+      <a href="/city.html?city=indore">Indore</a><a href="/city.html?city=surat">Surat</a>
+      <a href="/city.html?city=varanasi">Varanasi</a><a href="/city.html?city=bhopal">Bhopal</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2024 EventsPlaner.com — India's #1 Event Planner Network</p>
-    <p>Made with ♦ in India</p>
-  </div>
+  <div class="fbot"><p>© 2025 EventsPlaner.com — India's #1 Event Planner Network</p><p>Made with ♦ in India</p></div>
 </footer>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="if(event.target.id==='modalOverlay')closeModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div id="userModal" style="display:none">
-      <div class="tab-btns">
-        <button class="tab-btn active" onclick="switchTab(this,'loginTab')">Login</button>
-        <button class="tab-btn" onclick="switchTab(this,'signupTab')">Sign Up</button>
+<!-- ══════════════════════════════════
+     MODALS: LOGIN / REGISTER
+══════════════════════════════════ -->
+<div class="overlay" id="ov" onclick="if(event.target.id==='ov')closeModal()">
+<div class="modal">
+  <button class="mcls" onclick="closeModal()">✕</button>
+
+  <!-- LOGIN MODAL -->
+  <div id="mLogin" style="display:none">
+    <div class="mtitle">Welcome Back</div>
+    <p class="msub">Login to your EventsPlaner account</p>
+    <button class="gBtn" onclick="googleSignIn()">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G">
+      Continue with Google
+    </button>
+    <div class="divider"><div></div><span>or login with email</span><div></div></div>
+    <div class="fg"><label>Email</label><input type="email" id="lEmail" placeholder="your@email.com"></div>
+    <div class="fg"><label>Password</label><input type="password" id="lPass" placeholder="••••••••"></div>
+    <button class="btn btn-g fsub" onclick="doLogin()">Login to Account</button>
+    <p style="text-align:center;margin-top:14px;color:var(--g);font-size:.78rem">No account? <a href="#" onclick="openModal('register')" style="color:var(--gold)">Register Free</a></p>
+  </div>
+
+  <!-- REGISTER MODAL -->
+  <div id="mReg" style="display:none">
+    <div class="mtitle">Join as a Planner</div>
+    <p class="msub">Free registration — Start reaching clients today!</p>
+    <button class="gBtn" onclick="googleSignIn()">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G">
+      Sign up with Google
+    </button>
+    <div class="divider"><div></div><span>or fill the form</span><div></div></div>
+
+    <div class="fr">
+      <div class="fg"><label>Your Name *</label><input type="text" id="rName" placeholder="Full Name"></div>
+      <div class="fg"><label>Business Name *</label><input type="text" id="rBiz" placeholder="Company Name"></div>
+    </div>
+    <div class="fg"><label>Email *</label><input type="email" id="rEmail" placeholder="business@email.com"></div>
+    <div class="fg"><label>Phone *</label><input type="tel" id="rPhone" placeholder="+91 98765 43210"></div>
+    <div class="fr">
+      <div class="fg"><label>City *</label>
+        <select id="rCity">
+          <option value="">Select City</option>
+          <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
+          <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
+          <option>Jaipur</option><option>Kolkata</option><option>Ranchi</option>
+          <option>Jamshedpur</option><option>Patna</option><option>Dhanbad</option>
+          <option>Ahmedabad</option><option>Lucknow</option><option>Chandigarh</option>
+          <option>Indore</option><option>Surat</option><option>Nagpur</option>
+          <option>Varanasi</option><option>Bhopal</option>
+        </select>
       </div>
-      <div class="tab-content active" id="loginTab">
-        <div class="modal-title">Welcome Back</div>
-        <p class="modal-sub">Login to your account</p>
-        <button onclick="googleAuth()" style="width:100%;padding:12px;background:#fff;border:1px solid #ddd;border-radius:3px;cursor:pointer;font-size:.85rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;color:#333">
-          <img src="https://www.google.com/favicon.ico" width="18" height="18" alt="Google"> Continue with Google
-        </button>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><div style="flex:1;height:1px;background:rgba(255,255,255,.1)"></div><span style="color:var(--gray);font-size:.75rem">OR</span><div style="flex:1;height:1px;background:rgba(255,255,255,.1)"></div></div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
-        <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••"></div>
-        <button class="btn btn-gold form-submit" onclick="showToast('✓ Login successful!');closeModal()">Login</button>
-      </div>
-      <div class="tab-content" id="signupTab">
-        <div class="modal-title">Create Account</div>
-        <p class="modal-sub">Sign up free — No credit card needed</p>
-        <button onclick="googleAuth()" style="width:100%;padding:12px;background:#fff;border:1px solid #ddd;border-radius:3px;cursor:pointer;font-size:.85rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;color:#333">
-          <img src="https://www.google.com/favicon.ico" width="18" height="18" alt="Google"> Sign up with Google
-        </button>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><div style="flex:1;height:1px;background:rgba(255,255,255,.1)"></div><span style="color:var(--gray);font-size:.75rem">OR</span><div style="flex:1;height:1px;background:rgba(255,255,255,.1)"></div></div>
-        <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Rahul"></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Sharma"></div>
-        </div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 98765 43210"></div>
-        <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••"></div>
-        <button class="btn btn-gold form-submit" onclick="showToast('✓ Account created! Now you can add your business.');closeModal();setTimeout(()=>openDashboard(),1000)">Create Account</button>
+      <div class="fg"><label>Plan</label>
+        <select id="rPlan">
+          <option value="basic">Basic — Free</option>
+          <option value="professional">Pro — ₹499/mo</option>
+          <option value="premium">Premium — ₹999/mo</option>
+        </select>
       </div>
     </div>
-    <div id="plannerModal" style="display:none">
-      <div class="modal-title">Join as a Planner</div>
-      <p class="modal-sub">Reach thousands of clients across India — Free registration!</p>
-      <button onclick="googleAuth()" style="width:100%;padding:12px;background:#fff;border:1px solid #ddd;border-radius:3px;cursor:pointer;font-size:.85rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;color:#333">
-        <img src="https://www.google.com/favicon.ico" width="18" height="18" alt="Google"> Continue with Google
-      </button>
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><div style="flex:1;height:1px;background:rgba(255,255,255,.1)"></div><span style="color:var(--gray);font-size:.75rem">OR fill manually</span><div style="flex:1;height:1px;background:rgba(255,255,255,.1)"></div></div>
-      <div class="form-row">
-        <div class="form-group"><label>Your Name</label><input type="text" id="pName" placeholder="Full Name"></div>
-        <div class="form-group"><label>Business Name</label><input type="text" id="pBiz" placeholder="Company Name"></div>
-      </div>
-      <div class="form-group"><label>Email</label><input type="email" id="pEmail" placeholder="business@email.com"></div>
-      <div class="form-group"><label>Phone</label><input type="tel" id="pPhone" placeholder="+91 98765 43210"></div>
-      <div class="form-row">
-        <div class="form-group"><label>City</label>
-          <select id="pCity">
-            <option value="">Select City</option>
-            <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
-            <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
-            <option>Jaipur</option><option>Kolkata</option><option>Ahmedabad</option><option>Lucknow</option>
-          </select>
-        </div>
-        <div class="form-group"><label>Plan</label>
-          <select id="pPlan">
-            <option value="basic" selected>Basic — Free</option>
-            <option value="professional">Pro — ₹499/mo</option>
-            <option value="premium">Premium — ₹999/mo</option>
-          </select>
+    <div class="fg"><label>Event Types</label><input type="text" id="rEvents" placeholder="Wedding, Birthday, Corporate..."></div>
+    <div class="fg"><label>Password * (min 6 chars)</label><input type="password" id="rPass" placeholder="••••••••"></div>
+    <div class="fg">
+      <label>Profile Photo (optional)</label>
+      <div class="photo-box" onclick="document.getElementById('rPhoto').click()">
+        <input type="file" id="rPhoto" accept="image/*" onchange="previewPic(this)" style="position:absolute;inset:0;opacity:0;cursor:pointer;z-index:2">
+        <div class="photo-preview" id="pPrev"><img id="pImg" src="" alt="preview"></div>
+        <div id="pPH">
+          <div style="font-size:1.6rem;margin-bottom:5px">📷</div>
+          <div style="font-size:.76rem;color:var(--g)">Click to upload photo</div>
+          <div style="font-size:.68rem;color:var(--g);margin-top:2px">JPG, PNG — max 2MB</div>
         </div>
       </div>
-      <div class="form-group"><label>Event Types</label><input type="text" id="pEvents" placeholder="Wedding, Birthday, Corporate..."></div>
-      <div class="form-group"><label>Password</label><input type="password" id="pPass" placeholder="••••••••"></div>
-      <div class="form-group">
-        <label>Profile Photo (Optional)</label>
-        <div id="photoUploadArea" onclick="document.getElementById('pPhoto').click()" style="border:2px dashed rgba(201,168,76,.3);border-radius:4px;padding:20px;text-align:center;cursor:pointer;transition:.2s;background:var(--charcoal3)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,.3)'">
-          <div id="photoPreview" style="display:none;margin-bottom:8px"><img id="previewImg" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)" src="" alt="Preview"></div>
-          <div id="photoPlaceholder"><div style="font-size:1.8rem;margin-bottom:6px">📷</div><div style="font-size:.78rem;color:var(--gray)">Click to upload profile photo</div><div style="font-size:.7rem;color:var(--gray);margin-top:3px">JPG, PNG (max 2MB)</div></div>
-        </div>
-        <input type="file" id="pPhoto" accept="image/*" style="display:none" onchange="previewPhoto(this)">
+    </div>
+    <button class="btn btn-g fsub" id="regBtn" onclick="doRegister()">Register for Free ✓</button>
+    <p style="text-align:center;color:#4CAF82;font-size:.74rem;margin-top:10px">✓ Free to start — No credit card needed</p>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+     ACCOUNT PANEL (top-right dropdown)
+══════════════════════════════════ -->
+<div id="acPanel" onclick="if(event.target.id==='acPanel')closeAccount()">
+<div class="acBox">
+  <div class="acHead">
+    <h3 id="acPanelName">My Account</h3>
+    <button onclick="closeAccount()" style="background:none;border:none;color:var(--g);font-size:1.2rem;cursor:pointer">✕</button>
+  </div>
+  <div class="acBody">
+    <div class="acProfile">
+      <div class="acAv" id="acPanelAv"></div>
+      <div>
+        <div class="acName" id="acPanelFullName">User</div>
+        <div class="acPlan" id="acPanelPlan">Free Plan</div>
       </div>
-      <button class="btn btn-gold form-submit" onclick="handleRegister()">Register for Free</button>
-      <p style="text-align:center;color:#4CAF82;font-size:.74rem;margin-top:12px">✓ Free registration — No payment required to start</p>
+    </div>
+
+    <div class="acTabs">
+      <button class="acTab on" onclick="switchAcTab(this,'bizPane')">My Business</button>
+      <button class="acTab" onclick="switchAcTab(this,'settPane')">Settings</button>
+    </div>
+
+    <div class="acPaneWrap">
+      <!-- Business Pane -->
+      <div class="acPane on" id="bizPane">
+        <div id="bizInfo" style="display:none" class="bizCard">
+          <h4>Business Details</h4>
+          <div class="infoRow"><span>Business</span><span id="biName">—</span></div>
+          <div class="infoRow"><span>City</span><span id="biCity">—</span></div>
+          <div class="infoRow"><span>Event Types</span><span id="biType">—</span></div>
+          <div class="infoRow"><span>Phone</span><span id="biPhone">—</span></div>
+          <div class="infoRow" style="border:none"><span>Status</span><span id="biStatus"></span></div>
+        </div>
+        <div id="addBizSection">
+          <div class="addBizForm">
+            <h4>Add / Update Business</h4>
+            <div class="fg"><label>Business Name</label><input type="text" id="abName" placeholder="Your Company Name"></div>
+            <div class="fr">
+              <div class="fg"><label>City</label>
+                <select id="abCity">
+                  <option value="">Select</option>
+                  <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
+                  <option>Ranchi</option><option>Jamshedpur</option><option>Patna</option>
+                  <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
+                  <option>Jaipur</option><option>Kolkata</option><option>Lucknow</option>
+                </select>
+              </div>
+              <div class="fg"><label>Event Type</label>
+                <select id="abType">
+                  <option>Wedding</option><option>Birthday</option><option>Corporate</option><option>All Events</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label>Business Phone</label><input type="tel" id="abPhone" placeholder="+91 98765 43210"></div>
+            <div class="fg"><label>Short Description</label><textarea id="abDesc" rows="2" placeholder="Tell clients about your services..."></textarea></div>
+            <button class="btn btn-g acBtn" onclick="saveBusiness()">Save Business Info</button>
+          </div>
+        </div>
+        <div style="margin-top:12px;background:var(--c3);border-radius:4px;padding:14px;text-align:center">
+          <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-bottom:5px">Upgrade for More Visibility</div>
+          <div style="font-size:.76rem;color:var(--g);margin-bottom:10px">Pro ₹499/mo — Featured + 3 cities + Verified badge</div>
+          <button onclick="toast('Upgrade feature coming soon!')" style="padding:8px 20px;background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:3px;font-size:.76rem;cursor:pointer;text-transform:uppercase">Upgrade Plan</button>
+        </div>
+      </div>
+
+      <!-- Settings Pane -->
+      <div class="acPane" id="settPane">
+        <div class="addBizForm" style="margin-top:0">
+          <h4>Account Settings</h4>
+          <div class="fg"><label>Full Name</label><input type="text" id="settName" placeholder="Your Name"></div>
+          <div class="fg"><label>Email</label><input type="email" id="settEmail" placeholder="your@email.com" readonly style="opacity:.6"></div>
+          <div class="fg"><label>Phone</label><input type="tel" id="settPhone" placeholder="+91 98765 43210"></div>
+          <div class="fg">
+            <label>Update Profile Photo</label>
+            <div class="photo-box">
+              <input type="file" id="settPhoto" accept="image/*" onchange="updateSettPhoto(this)">
+              <div id="settPhotoPrev" style="margin-bottom:6px;display:none"><img id="settPhotoImg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)" src="" alt="photo"></div>
+              <div>📷 <span style="font-size:.76rem;color:var(--g)">Change photo</span></div>
+            </div>
+          </div>
+          <button class="btn btn-g acBtn" onclick="saveSettings()">Save Settings</button>
+          <button class="logoutBtn" onclick="doLogout()">🚪 Logout</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+</div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toastEl"></div>
 
 <script>
-const API='https://eventsplaner-backend.onrender.com/api';
-const demo=[
-  {id:1,name:'Rahul Sharma',biz:'RS Events Delhi',city:'Delhi',rating:4.8,reviews:124,tags:['Wedding','Birthday','Corporate'],plan:'premium',av:'R'},
-  {id:2,name:'Priya Patel',biz:'Dream Weddings Mumbai',city:'Mumbai',rating:4.9,reviews:98,tags:['Wedding','Reception','Mehendi'],plan:'premium',av:'P'},
-  {id:3,name:'Suresh Kumar',biz:'SK Celebrations',city:'Bangalore',rating:4.6,reviews:67,tags:['Corporate','Birthday'],plan:'professional',av:'S'},
-  {id:4,name:'Neha Gupta',biz:'Neha Events Jaipur',city:'Jaipur',rating:4.7,reviews:89,tags:['Wedding','Engagement'],plan:'premium',av:'N'},
-  {id:5,name:'Vikram Singh',biz:'Royal Corporate Events',city:'Delhi',rating:4.5,reviews:45,tags:['Corporate','Conference'],plan:'professional',av:'V'},
-  {id:6,name:'Anita Mehta',biz:'Celebration Hub Pune',city:'Pune',rating:4.9,reviews:156,tags:['Wedding','Birthday'],plan:'premium',av:'A'},
-  {id:7,name:'Rohit Joshi',biz:'Joshi Functions Mumbai',city:'Mumbai',rating:4.4,reviews:33,tags:['Birthday','Anniversary'],plan:'professional',av:'R'},
-  {id:8,name:'Deepika Rao',biz:'Elite Events Hyderabad',city:'Hyderabad',rating:4.8,reviews:112,tags:['Corporate','Wedding'],plan:'premium',av:'D'},
+const API = 'https://eventsplaner-backend.onrender.com/api';
+
+// ─── DEMO DATA ───
+const DEMO = [
+  {id:1,biz:'RS Events Delhi',city:'Delhi',rating:4.8,rev:124,tags:['Wedding','Birthday','Corporate'],plan:'premium',av:'R'},
+  {id:2,biz:'Dream Weddings',city:'Mumbai',rating:4.9,rev:98,tags:['Wedding','Reception','Mehendi'],plan:'premium',av:'P'},
+  {id:3,biz:'SK Celebrations',city:'Bangalore',rating:4.6,rev:67,tags:['Corporate','Birthday'],plan:'professional',av:'S'},
+  {id:4,biz:'Neha Events',city:'Jaipur',rating:4.7,rev:89,tags:['Wedding','Engagement'],plan:'premium',av:'N'},
+  {id:5,biz:'Royal Events',city:'Delhi',rating:4.5,rev:45,tags:['Corporate','Conference'],plan:'professional',av:'V'},
+  {id:6,biz:'Celebration Hub',city:'Pune',rating:4.9,rev:156,tags:['Wedding','Birthday'],plan:'premium',av:'A'},
+  {id:7,biz:'Joshi Functions',city:'Mumbai',rating:4.4,rev:33,tags:['Birthday','Anniversary'],plan:'professional',av:'R'},
+  {id:8,biz:'Elite Events',city:'Hyderabad',rating:4.8,rev:112,tags:['Corporate','Wedding'],plan:'premium',av:'D'},
 ];
-function renderPlanners(data){
+
+function renderCards(data){
   const ord={premium:0,professional:1,basic:2};
   data.sort((a,b)=>ord[a.plan]-ord[b.plan]||b.rating-a.rating);
-  document.getElementById('plannersGrid').innerHTML=data.map(p=>`
-    <article class="planner-card">
-      <div class="card-top">
-        <div class="card-avatar">${p.av}</div>
-        ${p.plan==='premium'?'<span class="card-plan-badge badge-prem">Premium</span>':p.plan==='professional'?'<span class="card-plan-badge badge-pro">Pro</span>':''}
-        <span class="verified-badge">Verified</span>
+  document.getElementById('pg').innerHTML = data.length ? data.map(p=>`
+    <article class="pcard">
+      <div class="ctop">
+        <div class="cav">${p.av}</div>
+        ${p.plan==='premium'?'<span class="cbadge bprem">Premium</span>':p.plan==='professional'?'<span class="cbadge bpro">Pro</span>':''} 
+        <span class="vbadge">✓ Verified</span>
       </div>
-      <div class="card-body">
-        <h3 class="card-biz">${p.biz}</h3>
-        <div class="card-city">${p.city}</div>
-        <div class="card-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-        <div class="card-footer">
-          <div><span class="card-rating">★ ${p.rating}</span><span class="card-reviews">(${p.reviews})</span></div>
-          <button class="card-cta" onclick="showToast('Enquiry sent to ${p.biz}!')">Contact</button>
+      <div class="cbody">
+        <div class="cbiz">${p.biz}</div>
+        <div class="ccity">◈ ${p.city}</div>
+        <div class="ctags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="cfoot">
+          <div><span class="crat">★ ${p.rating}</span><span class="crev">(${p.rev} reviews)</span></div>
+          <button class="ccta" onclick="toast('Enquiry sent to ${p.biz}!')">Contact</button>
         </div>
       </div>
-    </article>`).join('');
+    </article>`).join('') : '<p style="color:var(--g);text-align:center;padding:40px">No planners found for this search.</p>';
 }
-function filterPlanners(){
-  const city=document.getElementById('cityFilter').value;
-  const q=document.getElementById('searchInput').value.toLowerCase();
-  let list=demo.filter(p=>(!city||p.city===city)&&(!q||p.biz.toLowerCase().includes(q)||p.tags.some(t=>t.toLowerCase().includes(q))));
-  renderPlanners(list);
+
+function fp(){
+  const city = document.getElementById('cf').value;
+  const q = document.getElementById('si').value.toLowerCase();
+  renderCards(DEMO.filter(p=>(!city||p.city===city)&&(!q||p.biz.toLowerCase().includes(q)||p.tags.some(t=>t.toLowerCase().includes(q)))));
 }
-function toggleFaq(btn){
-  const item=btn.parentElement;
-  const wasOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if(!wasOpen) item.classList.add('open');
-}
+
+// ─── MODALS ───
 function openModal(type){
-  document.getElementById('modalOverlay').classList.add('active');
-  document.getElementById('userModal').style.display='none';
-  document.getElementById('plannerModal').style.display='none';
-  if(type==='register') document.getElementById('plannerModal').style.display='block';
-  else document.getElementById('userModal').style.display='block';
+  document.getElementById('ov').classList.add('on');
+  document.getElementById('mLogin').style.display = type==='login' ? 'block' : 'none';
+  document.getElementById('mReg').style.display   = type==='register' ? 'block' : 'none';
 }
-function closeModal(){document.getElementById('modalOverlay').classList.remove('active');}
-function switchTab(btn,tabId){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(tabId).classList.add('active');
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
-async function handleRegister(){
-  const name = document.getElementById('pName').value.trim();
-  const biz  = document.getElementById('pBiz').value.trim();
-  const email= document.getElementById('pEmail').value.trim();
-  const phone= document.getElementById('pPhone').value.trim();
-  const city = document.getElementById('pCity').value;
-  const plan = document.getElementById('pPlan').value;
-  const pass = document.getElementById('pPass').value;
-  const events = document.getElementById('pEvents').value.trim();
+function closeModal(){ document.getElementById('ov').classList.remove('on'); }
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){ closeModal(); closeAccount(); }});
 
-  if(!name||!email||!phone||!city||!pass){
-    showToast('⚠ Please fill all required fields');return;
+// ─── PHOTO PREVIEW ───
+function previewPic(inp){
+  if(inp.files&&inp.files[0]){
+    const r=new FileReader();
+    r.onload=e=>{
+      document.getElementById('pImg').src=e.target.result;
+      document.getElementById('pPrev').style.display='block';
+      document.getElementById('pPH').style.display='none';
+    };
+    r.readAsDataURL(inp.files[0]);
   }
-  if(pass.length < 6){showToast('⚠ Password must be at least 6 characters');return;}
+}
 
-  const submitBtn = document.querySelector('#plannerModal .form-submit');
-  submitBtn.textContent = 'Registering...';
-  submitBtn.disabled = true;
+// ─── REGISTER ───
+async function doRegister(){
+  const name  = document.getElementById('rName').value.trim();
+  const biz   = document.getElementById('rBiz').value.trim();
+  const email = document.getElementById('rEmail').value.trim();
+  const phone = document.getElementById('rPhone').value.trim();
+  const city  = document.getElementById('rCity').value;
+  const plan  = document.getElementById('rPlan').value;
+  const events= document.getElementById('rEvents').value.trim();
+  const pass  = document.getElementById('rPass').value;
+
+  if(!name||!email||!phone||!city||!pass){ toast('⚠ Please fill all required fields'); return; }
+  if(pass.length<6){ toast('⚠ Password must be at least 6 characters'); return; }
+  if(!/\S+@\S+\.\S+/.test(email)){ toast('⚠ Please enter a valid email'); return; }
+
+  const btn = document.getElementById('regBtn');
+  btn.textContent='Registering...'; btn.disabled=true;
 
   try {
-    const res = await fetch(API+'/planners/register', {
+    const res = await fetch(API+'/planners/register',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ name, businessName:biz, email, phone, city, eventTypes:events, plan, password:pass })
+      body:JSON.stringify({name,businessName:biz,email,phone,city,eventTypes:events,plan,password:pass})
     });
     const data = await res.json();
-    if(!res.ok) throw new Error(data.error || 'Registration failed');
+    if(!res.ok) throw new Error(data.error||'Registration failed. Please try again.');
 
-    // Save token & user info
-    localStorage.setItem('ep_token', data.token);
-    localStorage.setItem('ep_user', JSON.stringify({ name, email, biz, city, plan, plannerId: data.plannerId }));
-
-    // Upload photo if selected
-    const photoFile = document.getElementById('pPhoto').files[0];
-    if(photoFile && data.plannerId) {
-      const reader = new FileReader();
-      reader.onload = e => {
-        const savedUser = JSON.parse(localStorage.getItem('ep_user')||'{}');
-        savedUser.photo = e.target.result;
-        localStorage.setItem('ep_user', JSON.stringify(savedUser));
-      };
-      reader.readAsDataURL(photoFile);
+    // Get photo if uploaded
+    let photoData = null;
+    const photoFile = document.getElementById('rPhoto').files[0];
+    if(photoFile){
+      photoData = await new Promise(resolve=>{
+        const rd=new FileReader();
+        rd.onload=e=>resolve(e.target.result);
+        rd.readAsDataURL(photoFile);
+      });
     }
 
-    showLoginState({ name, photo: null });
-    showToast('✓ Welcome '+name+'! Your account is ready.');
+    // Save to localStorage
+    const user = { name, email, phone, biz, city, plan, events, token:data.token, plannerId:data.plannerId, photo:photoData };
+    localStorage.setItem('ep_user', JSON.stringify(user));
+
+    setLoggedIn(user);
     closeModal();
-    setTimeout(()=>openDashboard(), 1000);
-  } catch(err) {
-    showToast('⚠ '+err.message);
+    toast('✓ Welcome '+ name +'! Your account is ready.');
+    setTimeout(()=>openAccount(), 800);
+
+  } catch(err){
+    toast('⚠ '+err.message);
   } finally {
-    submitBtn.textContent = 'Register for Free';
-    submitBtn.disabled = false;
+    btn.textContent='Register for Free ✓'; btn.disabled=false;
   }
 }
 
-function showLoginState(user) {
-  document.getElementById('navBtns').style.display = 'none';
-  const navAcc = document.getElementById('navAccount');
-  navAcc.style.display = 'flex';
-  document.getElementById('navUserName').textContent = user.name || 'My Account';
-  const avatar = document.getElementById('navAvatarImg');
-  if(user.photo) {
-    avatar.innerHTML = '<img src="'+user.photo+'" style="width:100%;height:100%;object-fit:cover">';
-  } else {
-    avatar.textContent = (user.name||'U')[0].toUpperCase();
+// ─── LOGIN ───
+async function doLogin(){
+  const email = document.getElementById('lEmail').value.trim();
+  const pass  = document.getElementById('lPass').value;
+  if(!email||!pass){ toast('⚠ Please enter email and password'); return; }
+
+  // Try backend
+  try {
+    const res = await fetch(API+'/users/login',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email,password:pass})
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error||'Invalid credentials');
+    const user = { name:data.name||email.split('@')[0], email, token:data.token, plan:data.plan||'basic', photo:data.photo||null };
+    localStorage.setItem('ep_user', JSON.stringify(user));
+    setLoggedIn(user);
+    closeModal();
+    toast('✓ Welcome back!');
+  } catch(err){
+    // Fallback: check localStorage
+    const stored = JSON.parse(localStorage.getItem('ep_user')||'null');
+    if(stored && stored.email===email){
+      setLoggedIn(stored);
+      closeModal();
+      toast('✓ Welcome back '+stored.name+'!');
+    } else {
+      toast('⚠ '+err.message);
+    }
   }
 }
 
-function doLogout() {
-  localStorage.removeItem('ep_token');
-  localStorage.removeItem('ep_user');
-  document.getElementById('navBtns').style.display = 'flex';
-  document.getElementById('navAccount').style.display = 'none';
-  showToast('✓ Logged out successfully');
-}
-
-function previewPhoto(input) {
-  if(input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      document.getElementById('previewImg').src = e.target.result;
-      document.getElementById('photoPreview').style.display = 'block';
-      document.getElementById('photoPlaceholder').style.display = 'none';
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
-// Check if already logged in on page load
-(function checkLogin(){
-  const user = JSON.parse(localStorage.getItem('ep_user')||'null');
-  if(user && localStorage.getItem('ep_token')) {
-    showLoginState(user);
-  }
-})();
-function googleAuth(){
-  showToast('✓ Google login successful! Welcome!');
+// ─── GOOGLE SIGN IN ───
+function googleSignIn(){
+  // Demo - in production connect Firebase Auth
+  const mockUser = { name:'Google User', email:'user@gmail.com', plan:'basic', photo:null, token:'google_mock_token' };
+  localStorage.setItem('ep_user', JSON.stringify(mockUser));
+  setLoggedIn(mockUser);
   closeModal();
-  setTimeout(()=>openDashboard(),1000);
+  toast('✓ Signed in with Google!');
+  setTimeout(()=>openAccount(), 800);
 }
-function openDashboard(){
-  const user = JSON.parse(localStorage.getItem('ep_user')||'{}');
-  // Populate dashboard with saved data
-  if(user.name) document.getElementById('dashTitle').textContent = user.name+"'s Account";
-  if(user.biz) document.getElementById('bizName').value = user.biz;
-  if(user.city) document.getElementById('bizCity').value = user.city;
-  const planLabel = {basic:'Free Plan', professional:'Pro ₹499/mo', premium:'Premium ₹999/mo'};
-  document.querySelector('#userDashboard [style*="Free Plan"]').textContent = planLabel[user.plan] || 'Free Plan';
-  // Show photo in dashboard avatar
-  const dashAv = document.querySelector('#userDashboard [style*="font-size:1.4rem"]');
-  if(user.photo && dashAv) dashAv.innerHTML = '<img src="'+user.photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">';
-  else if(dashAv && user.name) dashAv.textContent = user.name[0].toUpperCase();
-  document.getElementById('userDashboard').style.display='flex';
-}
-function closeDashboard(){
-  document.getElementById('userDashboard').style.display='none';
-}
-window.addEventListener('scroll',()=>{
-  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);
-});
-renderPlanners(demo);
-function addBusiness(){
-  const n=document.getElementById('bizName').value;
-  const c=document.getElementById('bizCity').value;
-  const t=document.getElementById('bizType').value;
-  const p=document.getElementById('bizPhone').value;
-  if(!n||!c){showToast('⚠ Please fill business name and city');return;}
-  // Save to localStorage
-  const user = JSON.parse(localStorage.getItem('ep_user')||'{}');
-  user.biz = n; user.city = c; user.bizType = t; user.bizPhone = p;
-  localStorage.setItem('ep_user', JSON.stringify(user));
-  showToast('✓ Business "'+n+'" saved! Our team will verify it shortly.');
-  closeDashboard();
-}
-</script>
 
-<!-- USER DASHBOARD -->
-<div id="userDashboard" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.95);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px">
-  <div style="background:var(--charcoal2);border:1px solid rgba(201,168,76,.25);border-radius:6px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative">
-    <div style="background:var(--charcoal3);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,.15);display:flex;justify-content:space-between;align-items:center">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold)" id="dashTitle">My Account</div>
-      <button onclick="closeDashboard()" style="background:none;border:none;color:var(--gray);font-size:1.3rem;cursor:pointer">✕</button>
-    </div>
-    <div style="padding:24px">
-      <!-- Profile -->
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)">
-        <div style="width:56px;height:56px;border-radius:50%;background:var(--charcoal3);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--gold);font-weight:bold">U</div>
-        <div>
-          <div style="font-weight:600;font-size:1rem">My Account</div>
-          <div style="color:var(--gray);font-size:.8rem">Free Plan</div>
-        </div>
-      </div>
-      <!-- Add Business Section -->
-      <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:20px;margin-bottom:20px">
-        <div style="font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Add Your Business</div>
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Business Name</label><input type="text" id="bizName" placeholder="Your Event Company Name" style="width:100%;padding:11px 13px;background:var(--charcoal3);border:1px solid rgba(255,255,255,.08);border-radius:3px;color:var(--white);font-size:.88rem;outline:none"></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
-          <div><label style="display:block;font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">City</label>
-            <select id="bizCity" style="width:100%;padding:11px 13px;background:var(--charcoal3);border:1px solid rgba(255,255,255,.08);border-radius:3px;color:var(--white);font-size:.88rem;outline:none">
-              <option value="">Select City</option>
-              <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
-              <option>Ranchi</option><option>Jamshedpur</option><option>Patna</option>
-              <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
-              <option>Jaipur</option><option>Kolkata</option><option>Lucknow</option>
-            </select>
-          </div>
-          <div><label style="display:block;font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Event Type</label>
-            <select id="bizType" style="width:100%;padding:11px 13px;background:var(--charcoal3);border:1px solid rgba(255,255,255,.08);border-radius:3px;color:var(--white);font-size:.88rem;outline:none">
-              <option>Wedding</option><option>Birthday</option><option>Corporate</option><option>All Events</option>
-            </select>
-          </div>
-        </div>
-        <div style="margin-bottom:16px"><label style="display:block;font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Phone</label><input type="tel" id="bizPhone" placeholder="+91 98765 43210" style="width:100%;padding:11px 13px;background:var(--charcoal3);border:1px solid rgba(255,255,255,.08);border-radius:3px;color:var(--white);font-size:.88rem;outline:none"></div>
-        <button onclick="addBusiness()" style="width:100%;padding:12px;background:var(--gold);border:none;color:var(--charcoal);font-weight:700;border-radius:3px;font-size:.85rem;cursor:pointer;text-transform:uppercase;letter-spacing:.5px">+ Add My Business</button>
-      </div>
-      <!-- Upgrade -->
-      <div style="background:var(--charcoal3);border-radius:4px;padding:16px;text-align:center">
-        <div style="font-size:.8rem;color:var(--gold);margin-bottom:6px;font-weight:600">Upgrade for More Visibility</div>
-        <div style="font-size:.78rem;color:var(--gray);margin-bottom:12px">Pro ₹499/mo — Featured listing + 3 cities + Verified badge</div>
-        <button onclick="showToast('Redirecting to payment...')" style="padding:9px 22px;background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:3px;font-size:.78rem;cursor:pointer;text-transform:uppercase;letter-spacing:.5px">Upgrade to Pro</button>
-      </div>
-    </div>
-  </div>
-</div>
+// ─── LOGOUT ───
+function doLogout(){
+  localStorage.removeItem('ep_user');
+  document.getElementById('navGuest').style.display='flex';
+  document.getElementById('navUser').style.display='none';
+  document.getElementById('acBtn').style.display='none';
+  closeAccount();
+  toast('✓ Logged out');
+}
+
+// ─── SET LOGGED IN STATE ───
+function setLoggedIn(user){
+  document.getElementById('navGuest').style.display='none';
+  document.getElementById('navUser').style.display='flex';
+  const acBtnEl = document.getElementById('acBtn');
+  acBtnEl.style.display='flex';
+  document.getElementById('acName').textContent = (user.name||'Account').split(' ')[0];
+  const av = document.getElementById('acAvatar');
+  if(user.photo){ av.innerHTML=`<img src="${user.photo}" style="width:100%;height:100%;object-fit:cover">`; }
+  else { av.textContent=(user.name||'U')[0].toUpperCase(); }
+}
+
+// ─── ACCOUNT PANEL ───
+function openAccount(){
+  const user = JSON.parse(localStorage.getItem('ep_user')||'null');
+  if(!user){ openModal('login'); return; }
+
+  document.getElementById('acPanelName').textContent = user.name||'My Account';
+  document.getElementById('acPanelFullName').textContent = user.name||'User';
+  document.getElementById('acPanelPlan').textContent = {basic:'Free Plan',professional:'Pro ₹499/mo',premium:'Premium ₹999/mo'}[user.plan]||'Free Plan';
+
+  const av = document.getElementById('acPanelAv');
+  if(user.photo){ av.innerHTML=`<img src="${user.photo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`; }
+  else { av.textContent=(user.name||'U')[0].toUpperCase(); }
+
+  // Pre-fill settings
+  document.getElementById('settName').value  = user.name||'';
+  document.getElementById('settEmail').value = user.email||'';
+  document.getElementById('settPhone').value = user.phone||'';
+  if(user.photo){
+    document.getElementById('settPhotoImg').src=user.photo;
+    document.getElementById('settPhotoPrev').style.display='block';
+  }
+
+  // Show business info
+  if(user.biz){
+    document.getElementById('biName').textContent  = user.biz;
+    document.getElementById('biCity').textContent  = user.city||'—';
+    document.getElementById('biType').textContent  = user.events||'—';
+    document.getElementById('biPhone').textContent = user.phone||'—';
+    document.getElementById('biStatus').innerHTML  = '<span class="statusBadge s-active">Active</span>';
+    document.getElementById('bizInfo').style.display='block';
+    document.getElementById('abName').value  = user.biz;
+    document.getElementById('abCity').value  = user.city||'';
+    document.getElementById('abPhone').value = user.phone||'';
+    document.getElementById('abDesc').value  = user.desc||'';
+  }
+
+  document.getElementById('acPanel').classList.add('on');
+}
+function closeAccount(){ document.getElementById('acPanel').classList.remove('on'); }
+
+function switchAcTab(btn,pane){
+  document.querySelectorAll('.acTab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.acPane').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById(pane).classList.add('on');
+}
+
+// ─── SAVE BUSINESS ───
+async function saveBusiness(){
+  const user = JSON.parse(localStorage.getItem('ep_user')||'null');
+  if(!user){ toast('Please login first'); return; }
+
+  const biz   = document.getElementById('abName').value.trim();
+  const city  = document.getElementById('abCity').value;
+  const type  = document.getElementById('abType').value;
+  const phone = document.getElementById('abPhone').value.trim();
+  const desc  = document.getElementById('abDesc').value.trim();
+
+  if(!biz||!city){ toast('⚠ Please enter business name and city'); return; }
+
+  // Save to localStorage immediately
+  user.biz=biz; user.city=city; user.events=type; user.phone=phone; user.desc=desc;
+  localStorage.setItem('ep_user', JSON.stringify(user));
+
+  // Try save to backend
+  if(user.token && user.plannerId){
+    try {
+      await fetch(API+'/planners/'+user.plannerId, {
+        method:'PUT',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+user.token},
+        body:JSON.stringify({businessName:biz,city,eventTypes:type,phone})
+      });
+    } catch(e){ /* silent fail - saved locally */ }
+  }
+
+  // Update display
+  document.getElementById('biName').textContent=biz;
+  document.getElementById('biCity').textContent=city;
+  document.getElementById('biType').textContent=type;
+  document.getElementById('biPhone').textContent=phone;
+  document.getElementById('biStatus').innerHTML='<span class="statusBadge s-pending">Pending Verification</span>';
+  document.getElementById('bizInfo').style.display='block';
+
+  toast('✓ Business info saved! Verification within 24 hours.');
+}
+
+// ─── SAVE SETTINGS ───
+function saveSettings(){
+  const user = JSON.parse(localStorage.getItem('ep_user')||'null');
+  if(!user) return;
+  user.name  = document.getElementById('settName').value.trim()||user.name;
+  user.phone = document.getElementById('settPhone').value.trim()||user.phone;
+  localStorage.setItem('ep_user', JSON.stringify(user));
+  setLoggedIn(user);
+  document.getElementById('acPanelName').textContent=user.name;
+  document.getElementById('acPanelFullName').textContent=user.name;
+  toast('✓ Settings saved!');
+}
+
+function updateSettPhoto(inp){
+  if(inp.files&&inp.files[0]){
+    const r=new FileReader();
+    r.onload=e=>{
+      const user=JSON.parse(localStorage.getItem('ep_user')||'null');
+      if(user){ user.photo=e.target.result; localStorage.setItem('ep_user',JSON.stringify(user)); setLoggedIn(user); }
+      document.getElementById('settPhotoImg').src=e.target.result;
+      document.getElementById('settPhotoPrev').style.display='block';
+      toast('✓ Photo updated!');
+    };
+    r.readAsDataURL(inp.files[0]);
+  }
+}
+
+// ─── FAQ ───
+function tFaq(btn){ const i=btn.parentElement; const o=i.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open')); if(!o)i.classList.add('open'); }
+
+// ─── TOAST ───
+function toast(msg){ const t=document.getElementById('toastEl'); t.textContent=msg; t.classList.add('on'); setTimeout(()=>t.classList.remove('on'),3200); }
+
+// ─── SCROLL NAV ───
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',scrollY>50));
+
+// ─── INIT ───
+(function init(){
+  renderCards(DEMO);
+  const user = JSON.parse(localStorage.getItem('ep_user')||'null');
+  if(user && user.token){ setLoggedIn(user); }
+})();
+</script>
 </body>
 </html>
