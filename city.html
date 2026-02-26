@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Event Planners | EventsPlaner.com</title>
+<meta name="description" id="pageDesc" content="Find verified event planners on EventsPlaner.com">
+<link rel="canonical" id="pageCanonical" href="https://eventsplaner.com">
+<script type="application/ld+json" id="schemLD"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1C1C1E;color:#F5F0E8;font-family:Arial,sans-serif}
+nav{background:#1C1C1E;border-bottom:1px solid rgba(201,168,76,.3);padding:16px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.logo{color:#C9A84C;font-size:1.4rem;font-weight:bold;text-decoration:none}
+.logo span{color:#F5F0E8}
+.btn{padding:9px 20px;border-radius:4px;font-size:.8rem;font-weight:bold;cursor:pointer;border:none;text-transform:uppercase}
+.btn-gold{background:#C9A84C;color:#1C1C1E}
+.btn-outline{background:transparent;border:1px solid #C9A84C;color:#C9A84C}
+.breadcrumb{padding:14px 5%;font-size:.8rem;color:#8A8A8E}
+.breadcrumb a{color:#C9A84C;text-decoration:none}
+.hero{padding:48px 5% 40px;background:linear-gradient(135deg,#1C1C1E,#242426)}
+.city-badge{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px}
+.hero h1{font-size:1.9rem;line-height:1.3;margin-bottom:12px}
+.hero h1 span{color:#C9A84C}
+.hero p{color:#8A8A8E;font-size:.9rem;line-height:1.7;max-width:600px;margin-bottom:24px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hstat{text-align:center}
+.hstat-num{color:#C9A84C;font-size:1.4rem;font-weight:bold}
+.hstat-label{color:#8A8A8E;font-size:.7rem;text-transform:uppercase}
+.search-box{background:#242426;border:1px solid rgba(201,168,76,.3);margin:20px 5%;border-radius:6px;overflow:hidden}
+.search-box input{background:transparent;border:none;outline:none;color:#F5F0E8;font-size:.9rem;padding:14px 16px;width:100%;display:block;border-bottom:1px solid rgba(201,168,76,.1)}
+.search-box button{background:#C9A84C;border:none;color:#1C1C1E;font-weight:bold;padding:13px;width:100%;font-size:.88rem;cursor:pointer;text-transform:uppercase}
+.section{padding:40px 5%}
+.sec-label{color:#C9A84C;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-size:1.6rem;margin-bottom:6px}
+.sec-sub{color:#8A8A8E;font-size:.86rem;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+.card{background:#242426;border:1px solid rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
+.card-top{background:#2E2E30;padding:24px;text-align:center;position:relative}
+.card-av{width:60px;height:60px;border-radius:50%;background:#1C1C1E;border:2px solid #C9A84C;display:inline-flex;align-items:center;justify-content:center;font-size:1.4rem;color:#C9A84C;font-weight:bold}
+.verified{position:absolute;bottom:8px;left:8px;background:rgba(28,28,30,.9);border:1px solid #4CAF82;color:#4CAF82;font-size:.58rem;font-weight:bold;padding:3px 7px;border-radius:3px;text-transform:uppercase}
+.plan-badge{position:absolute;top:8px;right:8px;font-size:.58rem;font-weight:bold;padding:3px 8px;border-radius:3px;text-transform:uppercase}
+.badge-prem{background:#C9A84C;color:#1C1C1E}
+.badge-pro{border:1px solid #C9A84C;color:#C9A84C}
+.card-body{padding:16px}
+.card-name{font-size:1rem;font-weight:bold;margin-bottom:3px}
+.card-city{font-size:.75rem;color:#C9A84C;margin-bottom:10px}
+.card-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tag{background:#2E2E30;font-size:.66rem;padding:3px 8px;border-radius:3px;color:#C7C7CC}
+.card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid rgba(255,255,255,.06)}
+.rating{color:#C9A84C;font-size:.82rem;font-weight:bold}
+.reviews{color:#8A8A8E;font-size:.72rem}
+.cbtn{background:transparent;border:1px solid rgba(201,168,76,.4);color:#C9A84C;padding:6px 12px;border-radius:3px;font-size:.68rem;cursor:pointer;text-transform:uppercase}
+.nearby{padding:32px 5%;background:#242426}
+.nearby h2{font-size:1.2rem;margin-bottom:16px}
+.city-chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#2E2E30;border:1px solid rgba(201,168,76,.2);color:#C9A84C;text-decoration:none;font-size:.78rem;padding:8px 16px;border-radius:20px}
+.chip:hover{background:rgba(201,168,76,.1)}
+.seo-content{padding:32px 5%;background:#1C1C1E}
+.seo-content h2{font-size:1.2rem;color:#C9A84C;margin-bottom:12px}
+.seo-content p{color:#8A8A8E;font-size:.84rem;line-height:1.7;margin-bottom:12px}
+footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:36px 5% 100px}
+.footer-logo{color:#C9A84C;font-size:1.3rem;font-weight:bold;margin-bottom:8px}
+.footer-desc{color:#8A8A8E;font-size:.82rem;margin-bottom:24px}
+.footer-cities h4{color:#C9A84C;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.footer-city-links{display:flex;flex-wrap:wrap;gap:8px}
+.footer-city-links a{color:#8A8A8E;text-decoration:none;font-size:.78rem;border:1px solid rgba(201,168,76,.15);padding:5px 12px;border-radius:3px}
+.footer-city-links a:hover{color:#C9A84C;border-color:rgba(201,168,76,.4)}
+.footer-bottom{color:#8A8A8E;font-size:.74rem;border-top:1px solid rgba(255,255,255,.05);padding-top:16px;margin-top:24px}
+.mob-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(28,28,30,.98);border-top:1px solid rgba(201,168,76,.2);padding:10px 0 20px;z-index:998}
+.mob-nav-inner{display:flex;justify-content:space-around}
+.mob-item{display:flex;flex-direction:column;align-items:center;gap:3px;color:#8A8A8E;text-decoration:none;font-size:.58rem;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 10px;font-family:Arial,sans-serif}
+.mob-item span:first-child{font-size:1.1rem}
+.mob-item:hover{color:#C9A84C}
+.mob-cta{background:#C9A84C;color:#1C1C1E;border-radius:4px;padding:6px 12px;font-weight:bold}
+.no-results{text-align:center;padding:40px;color:#8A8A8E}
+.no-results h3{color:#C9A84C;margin-bottom:8px}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Events<span>Planer</span>.com</a>
+  <a href="/" class="btn btn-gold">← Home</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/">Home</a> → <a href="/cities">All Cities</a> → <span id="bcCity">City</span>
+</div>
+
+<div class="hero">
+  <div class="city-badge" id="cityBadge">📍 City Page</div>
+  <h1 id="heroTitle">Event Planners | <span>EventsPlaner.com</span></h1>
+  <p id="heroDesc">Find verified event planners near you.</p>
+  <div class="hero-stats">
+    <div class="hstat"><div class="hstat-num" id="cityCount">0</div><div class="hstat-label">Planners</div></div>
+    <div class="hstat"><div class="hstat-num">4.8★</div><div class="hstat-label">Avg Rating</div></div>
+    <div class="hstat"><div class="hstat-num">100%</div><div class="hstat-label">Verified</div></div>
+  </div>
+</div>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search by event type..." oninput="filterLocal()">
+  <button onclick="filterLocal()">Search in this City</button>
+</div>
+
+<div class="section">
+  <div class="sec-label">Local Experts</div>
+  <div class="sec-title" id="sectionTitle">Top Planners</div>
+  <div class="sec-sub" id="sectionSub">Verified professionals in your city</div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="nearby">
+  <h2>🏙️ Explore Other Cities</h2>
+  <div class="city-chips" id="cityChips"></div>
+</div>
+
+<div class="seo-content">
+  <h2 id="seoH2">Event Planning Services</h2>
+  <p id="seoP1"></p>
+  <p id="seoP2"></p>
+</div>
+
+<footer>
+  <div class="footer-logo">EventsPlaner.com</div>
+  <div class="footer-desc">India's leading platform for verified event planners.</div>
+  <div class="footer-cities">
+    <h4>Service Locations</h4>
+    <div class="footer-city-links" id="footerCities"></div>
+  </div>
+  <div class="footer-bottom">© 2024 EventsPlaner.com — Made with ♦ in India</div>
+</footer>
+
+<div class="mob-nav">
+  <div class="mob-nav-inner">
+    <a href="/" class="mob-item"><span>🏠</span><span>Home</span></a>
+    <a href="#" class="mob-item"><span>🔍</span><span>Search</span></a>
+    <a href="/" class="mob-item mob-cta"><span>＋</span><span>Join</span></a>
+    <a href="/cities" class="mob-item"><span>🏙️</span><span>Cities</span></a>
+  </div>
+</div>
+
+<script>
+const API = 'https://eventsplaner-backend.onrender.com/api';
+
+const cityData = {
+  'delhi':     { name:'Delhi',     area1:'Connaught Place', area2:'Gurugram',   count:186 },
+  'mumbai':    { name:'Mumbai',    area1:'Bandra',          area2:'Andheri',    count:142 },
+  'bangalore': { name:'Bangalore', area1:'Koramangala',     area2:'Whitefield', count:118 },
+  'hyderabad': { name:'Hyderabad', area1:'Banjara Hills',   area2:'HITEC City', count:97  },
+  'chennai':   { name:'Chennai',   area1:'Anna Nagar',      area2:'OMR',        count:84  },
+  'pune':      { name:'Pune',      area1:'Koregaon Park',   area2:'Hinjewadi',  count:76  },
+  'jaipur':    { name:'Jaipur',    area1:'C-Scheme',        area2:'Vaishali Nagar', count:68 },
+  'kolkata':   { name:'Kolkata',   area1:'Park Street',     area2:'Salt Lake',  count:89  },
+  'ahmedabad': { name:'Ahmedabad', area1:'Navrangpura',     area2:'SG Highway', count:72  },
+  'lucknow':   { name:'Lucknow',   area1:'Hazratganj',      area2:'Gomti Nagar',count:61  },
+  'surat':     { name:'Surat',     area1:'Adajan',          area2:'Athwa',      count:54  },
+  'chandigarh':{ name:'Chandigarh',area1:'Sector 17',       area2:'Sector 35',  count:48  },
+  'indore':    { name:'Indore',    area1:'Vijay Nagar',     area2:'Palasia',    count:52  },
+  'nagpur':    { name:'Nagpur',    area1:'Dharampeth',      area2:'Sitabuldi',  count:44  },
+  'patna':     { name:'Patna',     area1:'Boring Road',     area2:'Bailey Road',count:38  },
+  'ranchi':    { name:'Ranchi',    area1:'Main Road',       area2:'Harmu',      count:32  },
+  'bhopal':    { name:'Bhopal',    area1:'MP Nagar',        area2:'Arera Colony',count:41 },
+  'agra':      { name:'Agra',      area1:'Civil Lines',     area2:'Taj Nagri',  count:35  },
+  'varanasi':  { name:'Varanasi',  area1:'Sigra',           area2:'Lanka',      count:29  },
+  'coimbatore':{ name:'Coimbatore',area1:'RS Puram',        area2:'Peelamedu', count:46  },
+};
+
+const allPlanners = [
+  {id:1,name:'Rahul Sharma',biz:'RS Events',city:'Delhi',rating:4.8,reviews:124,tags:['Wedding','Birthday','Corporate'],plan:'premium',av:'R'},
+  {id:2,name:'Priya Patel',biz:'Dream Weddings',city:'Mumbai',rating:4.9,reviews:98,tags:['Wedding','Reception','Mehendi'],plan:'premium',av:'P'},
+  {id:3,name:'Suresh Kumar',biz:'SK Celebrations',city:'Bangalore',rating:4.6,reviews:67,tags:['Corporate','Birthday'],plan:'professional',av:'S'},
+  {id:4,name:'Neha Gupta',biz:'Neha Events',city:'Jaipur',rating:4.7,reviews:89,tags:['Wedding','Engagement'],plan:'premium',av:'N'},
+  {id:5,name:'Vikram Singh',biz:'Royal Events',city:'Delhi',rating:4.5,reviews:45,tags:['Corporate','Conference'],plan:'professional',av:'V'},
+  {id:6,name:'Anita Mehta',biz:'Celebration Hub',city:'Pune',rating:4.9,reviews:156,tags:['Wedding','Birthday'],plan:'premium',av:'A'},
+  {id:7,name:'Rohit Joshi',biz:'Joshi Functions',city:'Mumbai',rating:4.4,reviews:33,tags:['Birthday','Anniversary'],plan:'professional',av:'R'},
+  {id:8,name:'Deepika Rao',biz:'Elite Events',city:'Hyderabad',rating:4.8,reviews:112,tags:['Corporate','Wedding'],plan:'premium',av:'D'},
+  {id:9,name:'Amit Sharma',biz:'Sharma Weddings',city:'Kolkata',rating:4.6,reviews:78,tags:['Wedding','Reception'],plan:'premium',av:'A'},
+  {id:10,name:'Sneha Verma',biz:'Dream Day',city:'Chennai',rating:4.7,reviews:91,tags:['Wedding','Birthday'],plan:'professional',av:'S'},
+];
+
+// Get city from URL: /best-event-planner-in-delhi OR /event-planner-in-delhi
+function getCityFromURL(){
+  const path = window.location.pathname.toLowerCase();
+  // Try to match city name from URL
+  for(const key of Object.keys(cityData)){
+    if(path.includes(key)) return key;
+  }
+  // Fallback: query param ?city=delhi
+  const params = new URLSearchParams(window.location.search);
+  return params.get('city') || 'delhi';
+}
+
+function init(){
+  const cityKey = getCityFromURL();
+  const city = cityData[cityKey] || cityData['delhi'];
+  const cityName = city.name;
+  const slug = cityKey;
+
+  // Update meta tags
+  document.title = `Top Rated Event Planners in ${cityName} | EventsPlaner.com`;
+  document.getElementById('pageTitle').textContent = `Top Rated Event Planners in ${cityName} | EventsPlaner.com`;
+  document.getElementById('pageDesc').setAttribute('content',
+    `Find the best verified event vendors in ${cityName} on EventsPlaner.com. From grand weddings in ${city.area1} to corporate events in ${city.area2}, we cover it all.`);
+  document.getElementById('pageCanonical').setAttribute('href',
+    `https://eventsplaner.com/best-event-planner-in-${slug}`);
+
+  // Schema
+  document.getElementById('schemLD').textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":`Event Planners in ${cityName} | EventsPlaner.com`,
+    "description":`Find verified event planners in ${cityName}`,
+    "url":`https://eventsplaner.com/best-event-planner-in-${slug}`,
+    "areaServed":{"@type":"City","name":cityName,"addressCountry":"IN"},
+    "image":`https://eventsplaner.com/images/best-event-planner-in-${slug}.jpg`
+  });
+
+  // UI
+  document.getElementById('cityBadge').textContent = `📍 ${cityName}`;
+  document.getElementById('bcCity').textContent = cityName;
+  document.getElementById('heroTitle').innerHTML = `Top Rated Event Planners in <span>${cityName}</span>`;
+  document.getElementById('heroDesc').textContent =
+    `Find the best verified event vendors in ${cityName} on EventsPlaner.com. From grand weddings in ${city.area1} to corporate events in ${city.area2}, we cover it all.`;
+  document.getElementById('cityCount').textContent = city.count + '+';
+  document.getElementById('sectionTitle').textContent = `Top Planners in ${cityName}`;
+  document.getElementById('sectionSub').textContent = `Verified professionals serving ${cityName} and surrounding areas`;
+  document.getElementById('seoH2').textContent = `Event Planning Services in ${cityName}`;
+  document.getElementById('seoP1').textContent =
+    `EventsPlaner.com is the most trusted platform to find event planners in ${cityName}. Whether you are planning a grand wedding in ${city.area1} or a corporate event in ${city.area2}, our verified planners are ready to make your event unforgettable.`;
+  document.getElementById('seoP2').textContent =
+    `All planners listed on EventsPlaner.com in ${cityName} are background-verified, rated by real clients, and available to contact directly. Browse their portfolios, compare pricing and book with confidence.`;
+
+  // Filter planners for this city
+  const cityPlanners = allPlanners.filter(p => p.city.toLowerCase() === cityName.toLowerCase());
+  renderCards(cityPlanners, cityName, slug);
+
+  // Nearby cities
+  const chips = document.getElementById('cityChips');
+  Object.entries(cityData).filter(([k])=>k!==slug).slice(0,10).forEach(([k,v])=>{
+    const a = document.createElement('a');
+    a.href = `/best-event-planner-in-${k}`;
+    a.className = 'chip';
+    a.textContent = v.name;
+    chips.appendChild(a);
+  });
+
+  // Footer cities
+  const fc = document.getElementById('footerCities');
+  Object.entries(cityData).forEach(([k,v])=>{
+    const a = document.createElement('a');
+    a.href = `/best-event-planner-in-${k}`;
+    a.textContent = v.name;
+    fc.appendChild(a);
+  });
+}
+
+function renderCards(data, cityName, slug){
+  const grid = document.getElementById('grid');
+  if(!data.length){
+    grid.innerHTML = `<div class="no-results"><h3>Coming Soon!</h3><p>We are onboarding planners in ${cityName}. Check back soon or <a href="/" style="color:#C9A84C">register your business</a>.</p></div>`;
+    return;
+  }
+  const ord={premium:0,professional:1,basic:2};
+  data.sort((a,b)=>ord[a.plan]-ord[b.plan]||b.rating-a.rating);
+  grid.innerHTML = data.map(p=>`
+    <div class="card">
+      <div class="card-top">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%232E2E30'/%3E%3Ctext x='30' y='40' text-anchor='middle' font-size='22' fill='%23C9A84C'%3E${p.av}%3C/text%3E%3C/svg%3E"
+          alt="best-event-planner-in-${slug}-${p.name.toLowerCase().replace(/ /g,'-')}"
+          class="card-av" width="60" height="60" loading="lazy">
+        ${p.plan==='premium'?'<span class="plan-badge badge-prem">Premium</span>':p.plan==='professional'?'<span class="plan-badge badge-pro">Pro</span>':''}
+        <span class="verified">✓ Verified</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${p.biz}</div>
+        <div class="card-city">📍 ${p.city}</div>
+        <div class="card-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="card-footer">
+          <div><span class="rating">★ ${p.rating}</span> <span class="reviews">(${p.reviews})</span></div>
+          <button class="cbtn" onclick="alert('Enquiry sent to ${p.biz}!')">Contact</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filterLocal(){
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cityKey = getCityFromURL();
+  const cityName = (cityData[cityKey]||cityData['delhi']).name;
+  let list = allPlanners.filter(p=>p.city.toLowerCase()===cityName.toLowerCase());
+  if(q) list = list.filter(p=>p.biz.toLowerCase().includes(q)||p.tags.some(t=>t.toLowerCase().includes(q)));
+  renderCards(list, cityName, cityKey);
+}
+
+init();
+</script>
+</body>
+</html>
