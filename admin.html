@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — EventsPlaner.com</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111113;color:#F5F0E8;font-family:Arial,sans-serif}
+/* LOGIN */
+.login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.login-box{background:#1C1C1E;border:1px solid rgba(201,168,76,.3);border-radius:8px;padding:40px 32px;width:100%;max-width:380px}
+.login-logo{color:#C9A84C;font-size:1.4rem;font-weight:bold;text-align:center;margin-bottom:8px}
+.login-sub{color:#8A8A8E;font-size:.82rem;text-align:center;margin-bottom:28px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.7rem;color:#8A8A8E;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.field input{width:100%;padding:12px 14px;background:#242426;border:1px solid rgba(255,255,255,.08);border-radius:4px;color:#F5F0E8;font-size:.9rem;outline:none}
+.field input:focus{border-color:#C9A84C}
+.login-btn{width:100%;padding:13px;background:#C9A84C;border:none;color:#1C1C1E;font-weight:bold;border-radius:4px;font-size:.9rem;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.err{color:#ff6b6b;font-size:.8rem;text-align:center;margin-top:10px;display:none}
+/* DASHBOARD */
+.dashboard{display:none}
+.sidebar{background:#1C1C1E;border-right:1px solid rgba(201,168,76,.15);position:fixed;top:0;left:0;bottom:0;width:220px;padding:20px 0;z-index:100;overflow-y:auto}
+.sidebar-logo{color:#C9A84C;font-size:1.1rem;font-weight:bold;padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:10px}
+.nav-item{display:flex;align-items:center;gap:10px;padding:12px 20px;color:#8A8A8E;cursor:pointer;font-size:.86rem;transition:.2s;border:none;background:none;width:100%;text-align:left}
+.nav-item:hover,.nav-item.active{background:rgba(201,168,76,.08);color:#C9A84C;border-left:3px solid #C9A84C}
+.nav-item span:first-child{font-size:1.1rem}
+.logout-btn{position:absolute;bottom:20px;left:0;right:0;padding:0 20px}
+.logout-btn button{width:100%;padding:10px;background:transparent;border:1px solid rgba(255,100,100,.3);color:#ff6b6b;border-radius:4px;cursor:pointer;font-size:.82rem}
+.main{margin-left:220px;padding:24px;min-height:100vh}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.topbar h1{font-size:1.3rem}
+.topbar span{color:#8A8A8E;font-size:.82rem}
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px}
+.stat-card{background:#1C1C1E;border:1px solid rgba(201,168,76,.15);border-radius:6px;padding:20px}
+.stat-card .num{font-size:1.8rem;color:#C9A84C;font-weight:bold}
+.stat-card .lbl{color:#8A8A8E;font-size:.72rem;text-transform:uppercase;margin-top:4px}
+.stat-card .change{font-size:.72rem;color:#4CAF82;margin-top:2px}
+.panel{display:none}
+.panel.active{display:block}
+.table-wrap{background:#1C1C1E;border:1px solid rgba(201,168,76,.1);border-radius:6px;overflow:hidden}
+.table-head{background:#242426;padding:14px 16px;display:grid;gap:8px;font-size:.7rem;color:#8A8A8E;text-transform:uppercase;letter-spacing:.5px}
+.table-row{padding:14px 16px;display:grid;gap:8px;border-top:1px solid rgba(255,255,255,.04);font-size:.84rem;align-items:center}
+.planners-cols{grid-template-columns:2fr 1.2fr .8fr .8fr .8fr}
+.badge{font-size:.62rem;font-weight:bold;padding:3px 8px;border-radius:3px;text-transform:uppercase}
+.badge-active{background:rgba(76,175,82,.15);color:#4CAF82;border:1px solid rgba(76,175,82,.3)}
+.badge-pending{background:rgba(255,193,7,.1);color:#ffc107;border:1px solid rgba(255,193,7,.3)}
+.badge-prem{background:#C9A84C;color:#1C1C1E}
+.badge-pro{border:1px solid #C9A84C;color:#C9A84C}
+.badge-basic{background:#2E2E30;color:#8A8A8E}
+.action-btn{background:transparent;border:1px solid rgba(201,168,76,.3);color:#C9A84C;padding:5px 10px;border-radius:3px;font-size:.68rem;cursor:pointer;margin-right:4px}
+.action-btn.danger{border-color:rgba(255,100,100,.3);color:#ff6b6b}
+.search-bar{background:#1C1C1E;border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:10px 14px;color:#F5F0E8;font-size:.88rem;outline:none;width:100%;margin-bottom:14px}
+.search-bar::placeholder{color:#8A8A8E}
+.filter-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.filter-btn{background:#242426;border:1px solid rgba(255,255,255,.08);color:#8A8A8E;padding:7px 14px;border-radius:4px;font-size:.76rem;cursor:pointer}
+.filter-btn.active{background:rgba(201,168,76,.1);border-color:#C9A84C;color:#C9A84C}
+.section-title{font-size:1rem;font-weight:bold;margin-bottom:14px;color:#C9A84C}
+.empty{text-align:center;padding:40px;color:#8A8A8E;font-size:.86rem}
+.toast-admin{position:fixed;top:20px;right:20px;background:#242426;border:1px solid #C9A84C;color:#F5F0E8;padding:12px 20px;border-radius:4px;font-size:.84rem;opacity:0;transition:.3s;z-index:9999}
+.toast-admin.show{opacity:1}
+@media(max-width:600px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .planners-cols{grid-template-columns:2fr 1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">EventsPlaner.com</div>
+    <div class="login-sub">Admin Control Panel</div>
+    <div class="field"><label>Username</label><input type="text" id="adminUser" placeholder="admin"></div>
+    <div class="field"><label>Password</label><input type="password" id="adminPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <button class="login-btn" onclick="doLogin()">Login to Dashboard</button>
+    <div class="err" id="loginErr">Invalid username or password</div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+  <div class="sidebar">
+    <div class="sidebar-logo">⚡ Admin Panel</div>
+    <button class="nav-item active" onclick="showPanel('overview',this)"><span>📊</span><span>Overview</span></button>
+    <button class="nav-item" onclick="showPanel('planners',this)"><span>👥</span><span>Planners</span></button>
+    <button class="nav-item" onclick="showPanel('users',this)"><span>🙋</span><span>Users</span></button>
+    <button class="nav-item" onclick="showPanel('cities',this)"><span>🏙️</span><span>Cities</span></button>
+    <button class="nav-item" onclick="showPanel('settings',this)"><span>⚙️</span><span>Settings</span></button>
+    <div class="logout-btn"><button onclick="doLogout()">🚪 Logout</button></div>
+  </div>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 id="panelTitle">Overview</h1>
+      <span id="dateStr"></span>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="panel active" id="panel-overview">
+      <div class="stats-row">
+        <div class="stat-card"><div class="num" id="totalPlanners">0</div><div class="lbl">Total Planners</div><div class="change">↑ 12 this week</div></div>
+        <div class="stat-card"><div class="num" id="totalUsers">0</div><div class="lbl">Total Users</div><div class="change">↑ 28 this week</div></div>
+        <div class="stat-card"><div class="num" id="activeSubs">0</div><div class="lbl">Active Subscriptions</div><div class="change">↑ 5 this month</div></div>
+        <div class="stat-card"><div class="num" id="pendingApproval">0</div><div class="lbl">Pending Approval</div><div class="change" style="color:#ffc107">Needs review</div></div>
+      </div>
+      <div class="section-title">Recent Registrations</div>
+      <div class="table-wrap" id="recentTable"></div>
+    </div>
+
+    <!-- PLANNERS -->
+    <div class="panel" id="panel-planners">
+      <input class="search-bar" placeholder="🔍 Search planners by name, city, email..." oninput="searchPlanners(this.value)">
+      <div class="filter-row">
+        <button class="filter-btn active" onclick="filterStatus('all',this)">All</button>
+        <button class="filter-btn" onclick="filterStatus('active',this)">Active</button>
+        <button class="filter-btn" onclick="filterStatus('pending',this)">Pending</button>
+        <button class="filter-btn" onclick="filterStatus('premium',this)">Premium</button>
+        <button class="filter-btn" onclick="filterStatus('professional',this)">Pro</button>
+      </div>
+      <div class="table-wrap">
+        <div class="table-head planners-cols">
+          <span>Planner / Business</span><span>City</span><span>Plan</span><span>Status</span><span>Actions</span>
+        </div>
+        <div id="plannersTable"></div>
+      </div>
+    </div>
+
+    <!-- USERS -->
+    <div class="panel" id="panel-users">
+      <input class="search-bar" placeholder="🔍 Search users...">
+      <div class="table-wrap">
+        <div class="table-head" style="grid-template-columns:2fr 1.5fr 1fr 1fr">
+          <span>Name / Email</span><span>Phone</span><span>Joined</span><span>Actions</span>
+        </div>
+        <div id="usersTable"></div>
+      </div>
+    </div>
+
+    <!-- CITIES -->
+    <div class="panel" id="panel-cities">
+      <div class="section-title">City Pages & SEO</div>
+      <div class="table-wrap">
+        <div class="table-head" style="grid-template-columns:1.5fr 1fr 1fr 1.5fr">
+          <span>City</span><span>Planners</span><span>URL</span><span>SEO Link</span>
+        </div>
+        <div id="citiesTable"></div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="panel" id="panel-settings">
+      <div class="section-title">Platform Settings</div>
+      <div class="table-wrap" style="padding:24px">
+        <div style="margin-bottom:20px">
+          <label style="display:block;color:#8A8A8E;font-size:.72rem;text-transform:uppercase;margin-bottom:8px">Registration Mode</label>
+          <select id="regMode" style="background:#242426;border:1px solid rgba(201,168,76,.2);color:#F5F0E8;padding:10px 14px;border-radius:4px;font-size:.88rem;outline:none;width:100%">
+            <option value="free" selected>Free Registration (No Payment)</option>
+            <option value="paid">Paid Registration (Razorpay)</option>
+          </select>
+        </div>
+        <div style="margin-bottom:20px">
+          <label style="display:block;color:#8A8A8E;font-size:.72rem;text-transform:uppercase;margin-bottom:8px">Help Phone Number</label>
+          <input type="tel" id="helpPhone" placeholder="+91 98765 43210" style="background:#242426;border:1px solid rgba(201,168,76,.2);color:#F5F0E8;padding:10px 14px;border-radius:4px;font-size:.88rem;outline:none;width:100%">
+        </div>
+        <div style="margin-bottom:20px">
+          <label style="display:block;color:#8A8A8E;font-size:.72rem;text-transform:uppercase;margin-bottom:8px">Support Email</label>
+          <input type="email" id="helpEmail" placeholder="support@eventsplaner.com" style="background:#242426;border:1px solid rgba(201,168,76,.2);color:#F5F0E8;padding:10px 14px;border-radius:4px;font-size:.88rem;outline:none;width:100%">
+        </div>
+        <button onclick="saveSettings()" style="background:#C9A84C;border:none;color:#1C1C1E;padding:12px 28px;border-radius:4px;font-weight:bold;font-size:.88rem;cursor:pointer;text-transform:uppercase">Save Settings</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast-admin" id="adminToast"></div>
+
+<script>
+const ADMIN_USER = 'admin';
+const ADMIN_PASS = 'eventsplaner2024';
+
+const mockPlanners = [
+  {id:1,name:'Rahul Sharma',biz:'RS Events Delhi',email:'rahul@example.com',city:'Delhi',plan:'premium',status:'active',date:'2024-01-15'},
+  {id:2,name:'Priya Patel',biz:'Dream Weddings',email:'priya@example.com',city:'Mumbai',plan:'premium',status:'active',date:'2024-01-18'},
+  {id:3,name:'Suresh Kumar',biz:'SK Celebrations',email:'suresh@example.com',city:'Bangalore',plan:'professional',status:'active',date:'2024-01-20'},
+  {id:4,name:'Neha Gupta',biz:'Neha Events',email:'neha@example.com',city:'Jaipur',plan:'premium',status:'pending',date:'2024-02-01'},
+  {id:5,name:'Vikram Singh',biz:'Royal Events',email:'vikram@example.com',city:'Delhi',plan:'professional',status:'active',date:'2024-02-03'},
+  {id:6,name:'Anita Mehta',biz:'Celebration Hub',email:'anita@example.com',city:'Pune',plan:'premium',status:'active',date:'2024-02-05'},
+  {id:7,name:'Rohit Joshi',biz:'Joshi Functions',email:'rohit@example.com',city:'Mumbai',plan:'professional',status:'pending',date:'2024-02-10'},
+];
+
+const mockUsers = [
+  {name:'Amit Kumar',email:'amit@gmail.com',phone:'+91 98765 43210',date:'2024-01-10'},
+  {name:'Sunita Sharma',email:'sunita@gmail.com',phone:'+91 87654 32109',date:'2024-01-14'},
+  {name:'Rajesh Verma',email:'rajesh@gmail.com',phone:'+91 76543 21098',date:'2024-01-20'},
+  {name:'Meera Patel',email:'meera@gmail.com',phone:'+91 65432 10987',date:'2024-01-25'},
+];
+
+const cities = [
+  {name:'Delhi',count:186,key:'delhi'},{name:'Mumbai',count:142,key:'mumbai'},
+  {name:'Bangalore',count:118,key:'bangalore'},{name:'Hyderabad',count:97,key:'hyderabad'},
+  {name:'Chennai',count:84,key:'chennai'},{name:'Pune',count:76,key:'pune'},
+  {name:'Jaipur',count:68,key:'jaipur'},{name:'Kolkata',count:89,key:'kolkata'},
+  {name:'Ranchi',count:32,key:'ranchi'},{name:'Lucknow',count:61,key:'lucknow'},
+];
+
+let currentFilter = 'all';
+let filteredPlanners = [...mockPlanners];
+
+function doLogin(){
+  const u = document.getElementById('adminUser').value;
+  const p = document.getElementById('adminPass').value;
+  if(u===ADMIN_USER && p===ADMIN_PASS){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    loadDashboard();
+  } else {
+    document.getElementById('loginErr').style.display='block';
+  }
+}
+
+function doLogout(){
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('dashboard').style.display='none';
+}
+
+function loadDashboard(){
+  document.getElementById('dateStr').textContent = new Date().toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('totalPlanners').textContent = mockPlanners.length;
+  document.getElementById('totalUsers').textContent = mockUsers.length;
+  document.getElementById('activeSubs').textContent = mockPlanners.filter(p=>p.status==='active').length;
+  document.getElementById('pendingApproval').textContent = mockPlanners.filter(p=>p.status==='pending').length;
+
+  // Recent table
+  const rt = document.getElementById('recentTable');
+  rt.innerHTML = `<div class="table-head planners-cols"><span>Name</span><span>City</span><span>Plan</span><span>Status</span><span>Date</span></div>` +
+    mockPlanners.slice(0,5).map(p=>`
+    <div class="table-row planners-cols">
+      <div><div style="font-weight:bold;font-size:.86rem">${p.biz}</div><div style="color:#8A8A8E;font-size:.76rem">${p.email}</div></div>
+      <div>${p.city}</div>
+      <div><span class="badge badge-${p.plan}">${p.plan}</span></div>
+      <div><span class="badge badge-${p.status}">${p.status}</span></div>
+      <div style="color:#8A8A8E;font-size:.78rem">${p.date}</div>
+    </div>`).join('');
+
+  renderPlanners(mockPlanners);
+  renderUsers();
+  renderCities();
+}
+
+function renderPlanners(data){
+  document.getElementById('plannersTable').innerHTML = data.map(p=>`
+    <div class="table-row planners-cols">
+      <div><div style="font-weight:bold;font-size:.86rem">${p.biz}</div><div style="color:#8A8A8E;font-size:.76rem">${p.email}</div></div>
+      <div>${p.city}</div>
+      <div><span class="badge badge-${p.plan}">${p.plan}</span></div>
+      <div><span class="badge badge-${p.status}">${p.status}</span></div>
+      <div>
+        ${p.status==='pending'?`<button class="action-btn" onclick="approvePlanner(${p.id})">✓ Approve</button>`:''}
+        <button class="action-btn danger" onclick="deletePlanner(${p.id})">✕</button>
+      </div>
+    </div>`).join('') || '<div class="empty">No planners found</div>';
+}
+
+function renderUsers(){
+  document.getElementById('usersTable').innerHTML = mockUsers.map(u=>`
+    <div class="table-row" style="grid-template-columns:2fr 1.5fr 1fr 1fr">
+      <div><div style="font-weight:bold;font-size:.86rem">${u.name}</div><div style="color:#8A8A8E;font-size:.76rem">${u.email}</div></div>
+      <div style="color:#8A8A8E">${u.phone}</div>
+      <div style="color:#8A8A8E;font-size:.78rem">${u.date}</div>
+      <div><button class="action-btn danger">✕ Remove</button></div>
+    </div>`).join('');
+}
+
+function renderCities(){
+  document.getElementById('citiesTable').innerHTML = cities.map(c=>`
+    <div class="table-row" style="grid-template-columns:1.5fr 1fr 1fr 1.5fr">
+      <div style="font-weight:bold">${c.name}</div>
+      <div style="color:#C9A84C">${c.count}+</div>
+      <div style="color:#8A8A8E;font-size:.76rem">/best-event-planner-in-${c.key}</div>
+      <div><a href="/best-event-planner-in-${c.key}" target="_blank" style="color:#C9A84C;font-size:.78rem">🔗 View Page</a></div>
+    </div>`).join('');
+}
+
+function showPanel(name, btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  btn.classList.add('active');
+  document.getElementById('panelTitle').textContent = name.charAt(0).toUpperCase()+name.slice(1);
+}
+
+function searchPlanners(q){
+  const filtered = mockPlanners.filter(p=>
+    p.name.toLowerCase().includes(q.toLowerCase())||
+    p.biz.toLowerCase().includes(q.toLowerCase())||
+    p.city.toLowerCase().includes(q.toLowerCase())
+  );
+  renderPlanners(filtered);
+}
+
+function filterStatus(status, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = status==='all' ? mockPlanners : mockPlanners.filter(p=>p.status===status||p.plan===status);
+  renderPlanners(filtered);
+}
+
+function approvePlanner(id){
+  const p = mockPlanners.find(x=>x.id===id);
+  if(p){ p.status='active'; renderPlanners(mockPlanners); showToast('✓ Planner approved!'); loadDashboard(); }
+}
+
+function deletePlanner(id){
+  if(confirm('Delete this planner?')){
+    const i = mockPlanners.findIndex(x=>x.id===id);
+    if(i>-1){ mockPlanners.splice(i,1); renderPlanners(mockPlanners); showToast('Planner removed'); }
+  }
+}
+
+function saveSettings(){
+  showToast('✓ Settings saved!');
+}
+
+function showToast(msg){
+  const t = document.getElementById('adminToast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+</script>
+</body>
+</html>
