@@ -234,9 +234,17 @@ footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:56px
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <div class="nav-btns">
+  <div class="nav-btns" id="navBtns">
     <button class="btn btn-outline" onclick="openModal('login')">Login</button>
     <button class="btn btn-gold" onclick="openModal('register')">Join as Planner</button>
+  </div>
+  <div id="navAccount" style="display:none;align-items:center;gap:10px">
+    <button onclick="openDashboard()" style="display:flex;align-items:center;gap:8px;background:var(--charcoal3);border:1px solid rgba(201,168,76,.3);color:var(--white);padding:8px 16px;border-radius:3px;cursor:pointer;font-size:.82rem;font-family:Jost,Arial,sans-serif">
+      <div id="navAvatarImg" style="width:28px;height:28px;border-radius:50%;background:var(--charcoal);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--gold);font-weight:bold;overflow:hidden"></div>
+      <span id="navUserName">My Account</span>
+      <span style="color:var(--gold)">▾</span>
+    </button>
+    <button onclick="doLogout()" style="background:none;border:1px solid rgba(255,100,100,.3);color:#ff6b6b;padding:7px 13px;border-radius:3px;font-size:.78rem;cursor:pointer">Logout</button>
   </div>
 </nav>
 
@@ -492,6 +500,14 @@ footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:56px
       </div>
       <div class="form-group"><label>Event Types</label><input type="text" id="pEvents" placeholder="Wedding, Birthday, Corporate..."></div>
       <div class="form-group"><label>Password</label><input type="password" id="pPass" placeholder="••••••••"></div>
+      <div class="form-group">
+        <label>Profile Photo (Optional)</label>
+        <div id="photoUploadArea" onclick="document.getElementById('pPhoto').click()" style="border:2px dashed rgba(201,168,76,.3);border-radius:4px;padding:20px;text-align:center;cursor:pointer;transition:.2s;background:var(--charcoal3)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,.3)'">
+          <div id="photoPreview" style="display:none;margin-bottom:8px"><img id="previewImg" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)" src="" alt="Preview"></div>
+          <div id="photoPlaceholder"><div style="font-size:1.8rem;margin-bottom:6px">📷</div><div style="font-size:.78rem;color:var(--gray)">Click to upload profile photo</div><div style="font-size:.7rem;color:var(--gray);margin-top:3px">JPG, PNG (max 2MB)</div></div>
+        </div>
+        <input type="file" id="pPhoto" accept="image/*" style="display:none" onchange="previewPhoto(this)">
+      </div>
       <button class="btn btn-gold form-submit" onclick="handleRegister()">Register for Free</button>
       <p style="text-align:center;color:#4CAF82;font-size:.74rem;margin-top:12px">✓ Free registration — No payment required to start</p>
     </div>
@@ -565,20 +581,119 @@ function showToast(msg){
   t.textContent=msg;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),3000);
 }
-function handleRegister(){
-  if(!document.getElementById('pName').value||!document.getElementById('pCity').value){
-    showToast('⚠ Please fill all fields');return;
+async function handleRegister(){
+  const name = document.getElementById('pName').value.trim();
+  const biz  = document.getElementById('pBiz').value.trim();
+  const email= document.getElementById('pEmail').value.trim();
+  const phone= document.getElementById('pPhone').value.trim();
+  const city = document.getElementById('pCity').value;
+  const plan = document.getElementById('pPlan').value;
+  const pass = document.getElementById('pPass').value;
+  const events = document.getElementById('pEvents').value.trim();
+
+  if(!name||!email||!phone||!city||!pass){
+    showToast('⚠ Please fill all required fields');return;
   }
-  showToast('✓ Registration successful! Go to My Account to add your business.');
-  closeModal();
-  setTimeout(()=>openDashboard(),1200);
+  if(pass.length < 6){showToast('⚠ Password must be at least 6 characters');return;}
+
+  const submitBtn = document.querySelector('#plannerModal .form-submit');
+  submitBtn.textContent = 'Registering...';
+  submitBtn.disabled = true;
+
+  try {
+    const res = await fetch(API+'/planners/register', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ name, businessName:biz, email, phone, city, eventTypes:events, plan, password:pass })
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error || 'Registration failed');
+
+    // Save token & user info
+    localStorage.setItem('ep_token', data.token);
+    localStorage.setItem('ep_user', JSON.stringify({ name, email, biz, city, plan, plannerId: data.plannerId }));
+
+    // Upload photo if selected
+    const photoFile = document.getElementById('pPhoto').files[0];
+    if(photoFile && data.plannerId) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const savedUser = JSON.parse(localStorage.getItem('ep_user')||'{}');
+        savedUser.photo = e.target.result;
+        localStorage.setItem('ep_user', JSON.stringify(savedUser));
+      };
+      reader.readAsDataURL(photoFile);
+    }
+
+    showLoginState({ name, photo: null });
+    showToast('✓ Welcome '+name+'! Your account is ready.');
+    closeModal();
+    setTimeout(()=>openDashboard(), 1000);
+  } catch(err) {
+    showToast('⚠ '+err.message);
+  } finally {
+    submitBtn.textContent = 'Register for Free';
+    submitBtn.disabled = false;
+  }
 }
+
+function showLoginState(user) {
+  document.getElementById('navBtns').style.display = 'none';
+  const navAcc = document.getElementById('navAccount');
+  navAcc.style.display = 'flex';
+  document.getElementById('navUserName').textContent = user.name || 'My Account';
+  const avatar = document.getElementById('navAvatarImg');
+  if(user.photo) {
+    avatar.innerHTML = '<img src="'+user.photo+'" style="width:100%;height:100%;object-fit:cover">';
+  } else {
+    avatar.textContent = (user.name||'U')[0].toUpperCase();
+  }
+}
+
+function doLogout() {
+  localStorage.removeItem('ep_token');
+  localStorage.removeItem('ep_user');
+  document.getElementById('navBtns').style.display = 'flex';
+  document.getElementById('navAccount').style.display = 'none';
+  showToast('✓ Logged out successfully');
+}
+
+function previewPhoto(input) {
+  if(input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('previewImg').src = e.target.result;
+      document.getElementById('photoPreview').style.display = 'block';
+      document.getElementById('photoPlaceholder').style.display = 'none';
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+// Check if already logged in on page load
+(function checkLogin(){
+  const user = JSON.parse(localStorage.getItem('ep_user')||'null');
+  if(user && localStorage.getItem('ep_token')) {
+    showLoginState(user);
+  }
+})();
 function googleAuth(){
   showToast('✓ Google login successful! Welcome!');
   closeModal();
   setTimeout(()=>openDashboard(),1000);
 }
 function openDashboard(){
+  const user = JSON.parse(localStorage.getItem('ep_user')||'{}');
+  // Populate dashboard with saved data
+  if(user.name) document.getElementById('dashTitle').textContent = user.name+"'s Account";
+  if(user.biz) document.getElementById('bizName').value = user.biz;
+  if(user.city) document.getElementById('bizCity').value = user.city;
+  const planLabel = {basic:'Free Plan', professional:'Pro ₹499/mo', premium:'Premium ₹999/mo'};
+  document.querySelector('#userDashboard [style*="Free Plan"]').textContent = planLabel[user.plan] || 'Free Plan';
+  // Show photo in dashboard avatar
+  const dashAv = document.querySelector('#userDashboard [style*="font-size:1.4rem"]');
+  if(user.photo && dashAv) dashAv.innerHTML = '<img src="'+user.photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">';
+  else if(dashAv && user.name) dashAv.textContent = user.name[0].toUpperCase();
   document.getElementById('userDashboard').style.display='flex';
 }
 function closeDashboard(){
@@ -591,8 +706,14 @@ renderPlanners(demo);
 function addBusiness(){
   const n=document.getElementById('bizName').value;
   const c=document.getElementById('bizCity').value;
+  const t=document.getElementById('bizType').value;
+  const p=document.getElementById('bizPhone').value;
   if(!n||!c){showToast('⚠ Please fill business name and city');return;}
-  showToast('✓ Business "'+n+'" added successfully! Our team will verify it shortly.');
+  // Save to localStorage
+  const user = JSON.parse(localStorage.getItem('ep_user')||'{}');
+  user.biz = n; user.city = c; user.bizType = t; user.bizPhone = p;
+  localStorage.setItem('ep_user', JSON.stringify(user));
+  showToast('✓ Business "'+n+'" saved! Our team will verify it shortly.');
   closeDashboard();
 }
 </script>
@@ -601,7 +722,7 @@ function addBusiness(){
 <div id="userDashboard" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.95);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px">
   <div style="background:var(--charcoal2);border:1px solid rgba(201,168,76,.25);border-radius:6px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative">
     <div style="background:var(--charcoal3);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,.15);display:flex;justify-content:space-between;align-items:center">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold)">My Account</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold)" id="dashTitle">My Account</div>
       <button onclick="closeDashboard()" style="background:none;border:none;color:var(--gray);font-size:1.3rem;cursor:pointer">✕</button>
     </div>
     <div style="padding:24px">
