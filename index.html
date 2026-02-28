@@ -653,7 +653,8 @@ function previewPic(inp){
 // ─── REGISTER ───
 async function doRegister(){
   const name  = document.getElementById('rName').value.trim();
-  const biz   = document.getElementById('rBiz').value.trim();
+  const bizRaw = document.getElementById('rBiz').value.trim();
+  const biz   = bizRaw || name; // businessName khaali ho to naam use karo
   const email = document.getElementById('rEmail').value.trim();
   const phone = document.getElementById('rPhone').value.trim();
   const city  = document.getElementById('rCity').value;
@@ -661,7 +662,11 @@ async function doRegister(){
   const events= document.getElementById('rEvents').value.trim();
   const pass  = document.getElementById('rPass').value;
 
-  if(!name||!email||!phone||!city||!pass){ toast('⚠ Please fill all required fields'); return; }
+  if(!name){ toast('⚠ Please enter your name'); return; }
+  if(!email){ toast('⚠ Please enter your email'); return; }
+  if(!phone){ toast('⚠ Please enter your phone number'); return; }
+  if(!city){ toast('⚠ Please select your city'); return; }
+  if(!pass){ toast('⚠ Please create a password'); return; }
   if(pass.length<6){ toast('⚠ Password must be at least 6 characters'); return; }
   if(!/\S+@\S+\.\S+/.test(email)){ toast('⚠ Please enter a valid email'); return; }
 
@@ -712,7 +717,7 @@ async function doLogin(){
 
   // Try backend
   try {
-    const res = await fetch(API+'/users/login',{
+    const res = await fetch(API+'/auth/login',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({email,password:pass})
