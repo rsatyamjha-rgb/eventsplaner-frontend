@@ -476,16 +476,17 @@ footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:52px
     <div class="fg"><label>Event Types</label><input type="text" id="rEvents" placeholder="Wedding, Birthday, Corporate..."></div>
     <div class="fg"><label>Password * (min 6 chars)</label><input type="password" id="rPass" placeholder="••••••••"></div>
     <div class="fg">
-      <label>Profile Photo (optional)</label>
-      <div class="photo-box" onclick="document.getElementById('rPhoto').click()">
-        <input type="file" id="rPhoto" accept="image/*" onchange="previewPic(this)" style="position:absolute;inset:0;opacity:0;cursor:pointer;z-index:2">
-        <div class="photo-preview" id="pPrev"><img id="pImg" src="" alt="preview"></div>
+      <label>Business Photos (up to 5)</label>
+      <div class="photo-box" onclick="document.getElementById('rPhoto').click()" style="min-height:90px">
+        <input type="file" id="rPhoto" accept="image/*" multiple onchange="previewPics(this)" style="position:absolute;inset:0;opacity:0;cursor:pointer;z-index:2">
+        <div id="pPrev" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:6px"></div>
         <div id="pPH">
           <div style="font-size:1.6rem;margin-bottom:5px">📷</div>
-          <div style="font-size:.76rem;color:var(--g)">Click to upload photo</div>
-          <div style="font-size:.68rem;color:var(--g);margin-top:2px">JPG, PNG — max 2MB</div>
+          <div style="font-size:.76rem;color:var(--g)">Click to upload up to 5 photos</div>
+          <div style="font-size:.68rem;color:var(--g);margin-top:2px">JPG, PNG — First photo will be your profile pic</div>
         </div>
       </div>
+      <div id="photoCount" style="font-size:.72rem;color:var(--gold);margin-top:5px;text-align:center"></div>
     </div>
     <button class="btn btn-g fsub" id="regBtn" onclick="doRegister()">Register for Free ✓</button>
     <p style="text-align:center;color:#4CAF82;font-size:.74rem;margin-top:10px">✓ Free to start — No credit card needed</p>
@@ -588,44 +589,76 @@ footer{background:#111113;border-top:1px solid rgba(201,168,76,.15);padding:52px
 <script>
 const API = 'https://eventsplaner-backend.onrender.com/api';
 
-// ─── DEMO DATA ───
-const DEMO = [
-  {id:1,biz:'RS Events Delhi',city:'Delhi',rating:4.8,rev:124,tags:['Wedding','Birthday','Corporate'],plan:'premium',av:'R'},
-  {id:2,biz:'Dream Weddings',city:'Mumbai',rating:4.9,rev:98,tags:['Wedding','Reception','Mehendi'],plan:'premium',av:'P'},
-  {id:3,biz:'SK Celebrations',city:'Bangalore',rating:4.6,rev:67,tags:['Corporate','Birthday'],plan:'professional',av:'S'},
-  {id:4,biz:'Neha Events',city:'Jaipur',rating:4.7,rev:89,tags:['Wedding','Engagement'],plan:'premium',av:'N'},
-  {id:5,biz:'Royal Events',city:'Delhi',rating:4.5,rev:45,tags:['Corporate','Conference'],plan:'professional',av:'V'},
-  {id:6,biz:'Celebration Hub',city:'Pune',rating:4.9,rev:156,tags:['Wedding','Birthday'],plan:'premium',av:'A'},
-  {id:7,biz:'Joshi Functions',city:'Mumbai',rating:4.4,rev:33,tags:['Birthday','Anniversary'],plan:'professional',av:'R'},
-  {id:8,biz:'Elite Events',city:'Hyderabad',rating:4.8,rev:112,tags:['Corporate','Wedding'],plan:'premium',av:'D'},
+// ─── PLANNER DATA ───
+const FALLBACK = [
+  {id:1,businessName:'RS Events Delhi',city:'Delhi',rating:4.8,totalReviews:124,eventTypes:['Wedding','Birthday','Corporate'],plan:'premium'},
+  {id:2,businessName:'Dream Weddings',city:'Mumbai',rating:4.9,totalReviews:98,eventTypes:['Wedding','Reception','Mehendi'],plan:'premium'},
+  {id:3,businessName:'SK Celebrations',city:'Bangalore',rating:4.6,totalReviews:67,eventTypes:['Corporate','Birthday'],plan:'professional'},
+  {id:4,businessName:'Neha Events',city:'Jaipur',rating:4.7,totalReviews:89,eventTypes:['Wedding','Engagement'],plan:'premium'},
+  {id:5,businessName:'Royal Events',city:'Delhi',rating:4.5,totalReviews:45,eventTypes:['Corporate','Conference'],plan:'professional'},
+  {id:6,businessName:'Celebration Hub',city:'Pune',rating:4.9,totalReviews:156,eventTypes:['Wedding','Birthday'],plan:'premium'},
 ];
 
 function renderCards(data){
   const ord={premium:0,professional:1,basic:2};
-  data.sort((a,b)=>ord[a.plan]-ord[b.plan]||b.rating-a.rating);
-  document.getElementById('pg').innerHTML = data.length ? data.map(p=>`
-    <article class="pcard">
+  data.sort((a,b)=>(ord[a.plan]||2)-(ord[b.plan]||2)||b.rating-a.rating);
+  document.getElementById('pg').innerHTML = data.length ? data.map(p=>{
+    const name = p.businessName || p.name || '?';
+    const av = name[0].toUpperCase();
+    const tags = Array.isArray(p.eventTypes) ? p.eventTypes : (p.eventTypes||'').split(',');
+    const photo = p.photo || p.photos?.[0] || null;
+    return `<article class="pcard">
       <div class="ctop">
-        <div class="cav">${p.av}</div>
+        <div class="cav">${photo ? `<img src="${photo}" style="width:100%;height:100%;object-fit:cover">` : av}</div>
         ${p.plan==='premium'?'<span class="cbadge bprem">Premium</span>':p.plan==='professional'?'<span class="cbadge bpro">Pro</span>':''} 
         <span class="vbadge">✓ Verified</span>
       </div>
       <div class="cbody">
-        <div class="cbiz">${p.biz}</div>
-        <div class="ccity">◈ ${p.city}</div>
-        <div class="ctags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="cbiz">${name}</div>
+        <div class="ccity">◈ ${p.city||''}</div>
+        <div class="ctags">${tags.slice(0,3).map(t=>`<span class="tag">${t.trim()}</span>`).join('')}</div>
         <div class="cfoot">
-          <div><span class="crat">★ ${p.rating}</span><span class="crev">(${p.rev} reviews)</span></div>
-          <button class="ccta" onclick="toast('Enquiry sent to ${p.biz}!')">Contact</button>
+          <div><span class="crat">★ ${p.rating||'New'}</span><span class="crev">${p.totalReviews?'('+p.totalReviews+' reviews)':''}</span></div>
+          <button class="ccta" onclick="toast('Enquiry sent to ${name.replace(/'/g,"\'")}!')">Contact</button>
         </div>
       </div>
-    </article>`).join('') : '<p style="color:var(--g);text-align:center;padding:40px">No planners found for this search.</p>';
+    </article>`;
+  }).join('') : '<p style="color:var(--g);text-align:center;padding:40px">No planners found. Be the first in your city! <a href="#" onclick="openModal(\'register\')" style="color:var(--gold)">Register Free</a></p>';
 }
 
-function fp(){
+async function fp(){
   const city = document.getElementById('cf').value;
-  const q = document.getElementById('si').value.toLowerCase();
-  renderCards(DEMO.filter(p=>(!city||p.city===city)&&(!q||p.biz.toLowerCase().includes(q)||p.tags.some(t=>t.toLowerCase().includes(q)))));
+  const q = document.getElementById('si').value;
+  const grid = document.getElementById('pg');
+  grid.innerHTML = '<p style="color:var(--g);text-align:center;padding:40px">Loading...</p>';
+  try {
+    let url = API+'/planners?limit=50';
+    if(city) url += '&city='+encodeURIComponent(city);
+    if(q) url += '&search='+encodeURIComponent(q);
+    const res = await fetch(url);
+    const data = await res.json();
+    const list = data.planners || [];
+    if(list.length > 0){
+      renderCards(list);
+    } else {
+      // Backend se nahi mila — fallback demo + user ka data bhi dikhao
+      let fallback = [...FALLBACK];
+      const myUser = JSON.parse(localStorage.getItem('ep_user')||'null');
+      if(myUser && myUser.biz){
+        fallback.unshift({id:'me',businessName:myUser.biz,city:myUser.city,rating:0,totalReviews:0,eventTypes:[myUser.events||'All Events'],plan:myUser.plan||'basic',photo:myUser.photo});
+      }
+      let filtered = fallback.filter(p=>(!city||p.city===city)&&(!q||p.businessName.toLowerCase().includes(q.toLowerCase())));
+      renderCards(filtered.length ? filtered : fallback);
+    }
+  } catch(e){
+    // Offline fallback
+    let fallback = [...FALLBACK];
+    const myUser = JSON.parse(localStorage.getItem('ep_user')||'null');
+    if(myUser && myUser.biz){
+      fallback.unshift({id:'me',businessName:myUser.biz,city:myUser.city,rating:0,totalReviews:0,eventTypes:[myUser.events||'All Events'],plan:myUser.plan||'basic',photo:myUser.photo});
+    }
+    renderCards(fallback);
+  }
 }
 
 // ─── MODALS ───
@@ -638,16 +671,32 @@ function closeModal(){ document.getElementById('ov').classList.remove('on'); }
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){ closeModal(); closeAccount(); }});
 
 // ─── PHOTO PREVIEW ───
-function previewPic(inp){
-  if(inp.files&&inp.files[0]){
+let uploadedPhotos = [];
+function previewPics(inp){
+  const files = Array.from(inp.files).slice(0,5);
+  uploadedPhotos = [];
+  const prev = document.getElementById('pPrev');
+  prev.innerHTML = '';
+  document.getElementById('photoCount').textContent = files.length + ' photo' + (files.length>1?'s':'') + ' selected';
+  if(files.length > 0){
+    document.getElementById('pPH').style.display='none';
+    prev.style.display='flex';
+  } else {
+    document.getElementById('pPH').style.display='block';
+    document.getElementById('photoCount').textContent='';
+  }
+  files.forEach((file,i)=>{
     const r=new FileReader();
     r.onload=e=>{
-      document.getElementById('pImg').src=e.target.result;
-      document.getElementById('pPrev').style.display='block';
-      document.getElementById('pPH').style.display='none';
+      uploadedPhotos[i]=e.target.result;
+      const img=document.createElement('div');
+      img.style.cssText='position:relative;display:inline-block';
+      img.innerHTML=`<img src="${e.target.result}" style="width:56px;height:56px;object-fit:cover;border-radius:4px;border:${i===0?'2px solid var(--gold)':'1px solid rgba(201,168,76,.3)'}">
+        ${i===0?'<span style="position:absolute;bottom:-2px;left:0;right:0;text-align:center;font-size:.5rem;color:var(--gold);font-weight:700">MAIN</span>':''}`;
+      prev.appendChild(img);
     };
-    r.readAsDataURL(inp.files[0]);
-  }
+    r.readAsDataURL(file);
+  });
 }
 
 // ─── REGISTER ───
@@ -682,19 +731,12 @@ async function doRegister(){
     const data = await res.json();
     if(!res.ok) throw new Error(data.error||'Registration failed. Please try again.');
 
-    // Get photo if uploaded
-    let photoData = null;
-    const photoFile = document.getElementById('rPhoto').files[0];
-    if(photoFile){
-      photoData = await new Promise(resolve=>{
-        const rd=new FileReader();
-        rd.onload=e=>resolve(e.target.result);
-        rd.readAsDataURL(photoFile);
-      });
-    }
+    // Get photos (already read by previewPics)
+    const photoData = uploadedPhotos[0] || null; // first photo as profile
+    const allPhotos = uploadedPhotos.filter(Boolean);
 
     // Save to localStorage
-    const user = { name, email, phone, biz, city, plan, events, token:data.token, plannerId:data.plannerId, photo:photoData };
+    const user = { name, email, phone, biz, city, plan, events, token:data.token, plannerId:data.plannerId, photo:photoData, photos:allPhotos };
     localStorage.setItem('ep_user', JSON.stringify(user));
 
     setLoggedIn(user);
@@ -899,7 +941,7 @@ window.addEventListener('scroll',()=>document.getElementById('mainNav').classLis
 
 // ─── INIT ───
 (function init(){
-  renderCards(DEMO);
+  fp(); // Load from backend (with fallback)
   const user = JSON.parse(localStorage.getItem('ep_user')||'null');
   if(user && user.token){ setLoggedIn(user); }
 })();
